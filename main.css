@@ -98,6 +98,9 @@ a{
     animation-delay: -.5s;
 
 }
+.proj a{
+    color: #373737;
+}
 .projImg{
     display:block;
     max-width:50rem;
