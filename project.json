@@ -1,0 +1,26 @@
+[
+    {
+        "title":"Neuralnet-MCG",
+        "desc":"A convolutional neural net (CNN) can successfully diagnose heart attack symptoms in ECG scans. A 3D CNN can also successfully diagnose heart attacks in a magnetocardiogram (MCG) video.  We correctly find that the ST section of an ECG/MCG is the most diagnostic part for detecting myocardial infarctions!",
+        "img":"img/neuralnet-mcg.gif",
+        "gitLink":"https://github.com/Smith42/neuralnet-mcg",
+        "pLink":"reports/smith_mike_ML_report.pdf"
+    },
+    {
+        "title":"SAGAN",
+        "desc":"A spatial generative adversarial network model can generate synthetic astronomical 'observations' that are statistically indistinguishable from the real thing. We can use the same model to generate ridiculous amounts of data, like a <i><b>7.8 billion</b></i> pixel synthetic observation",
+        "img":"img/spaceInOut2.gif",
+        "gitLink":"https://github.com/Smith42/XDF-GAN",
+        "pLink":"https://doi.org/10.1093/mnras/stz2886"
+    },
+    {
+        "title":"Pix2Prof",
+        "desc":"Language models can be applied to astronomy! A ResNet-18 -> Gated Recurrent Unit (GRU) encoder--decoder model is used to accurately 'caption' galaxy images with light profile data.",
+        "img":"img/p2p_simple.png",
+        "gitLink":"https://github.com/Smith42/pix2prof",
+        "pLink":""
+
+    }
+]
+    
+

@@ -1,0 +1,27 @@
+
+[
+    {
+        "text": "Website By Charlie Smith",
+        "link":"https://www.github.com/charlie-s1"
+    },
+    {
+        "text":"Deep learning for your <3",
+        "link":"#Neuralnet-MCG"
+    },
+    {
+        "text": "Click to see CV.pdf",
+        "link":"reports/smith_mike.pdf"
+    },
+    {
+        "text": "Website By Charlie Smith",
+        "link":"https://www.github.com/charlie-s1"
+    },
+    {
+        "text":"Teaching SAGAN to hallucinate astronomy",
+        "link":"#SAGAN"
+    },
+    {
+        "text":"Extracting galaxy data with a language model",
+        "link":"#Pix2Prof"
+    }
+]
