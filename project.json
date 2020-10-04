@@ -8,7 +8,7 @@
     },
     {
         "title":"SAGAN",
-        "desc":"A spatial generative adversarial network model can generate synthetic astronomical 'observations' that are statistically indistinguishable from the real thing. We can use the same model to generate ridiculous amounts of data, like a <i><b>7.8 billion</b></i> pixel synthetic observation",
+        "desc":"A spatial generative adversarial network model can generate synthetic astronomical 'observations' that are statistically indistinguishable from the real thing. We can use the same model to generate ridiculous amounts of data, like a <a href='http://star.herts.ac.uk/~jgeach/gdf.html'><i><b>7.8 billion</b></i> pixel synthetic observation</a>.",
         "img":"img/spaceInOut2.gif",
         "gitLink":"https://github.com/Smith42/XDF-GAN",
         "pLink":"https://doi.org/10.1093/mnras/stz2886"
