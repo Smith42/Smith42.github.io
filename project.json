@@ -15,7 +15,7 @@
     },
     {
         "title":"Pix2Prof",
-        "desc":"Language models can be applied to astronomy! A ResNet-18 -> Gated Recurrent Unit (GRU) encoder--decoder model is used to accurately 'caption' galaxy images with light profile data.",
+        "desc":"Language models can be applied to astronomy! A ResNet-18 => Gated Recurrent Unit (GRU) encoder--decoder model is used to accurately 'caption' galaxy images with light profile data.",
         "img":"img/p2p_simple.png",
         "gitLink":"https://github.com/Smith42/pix2prof",
         "pLink":""
