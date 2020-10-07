@@ -61,8 +61,8 @@ body{
     font-size: 7rem;
     z-index: -1;
     position: absolute;
-    left:-100%;
-    right:-100%;
+    left:50%;
+    transform: translate(-50%);
     margin:auto;
     bottom:2rem;
     text-align: center;
