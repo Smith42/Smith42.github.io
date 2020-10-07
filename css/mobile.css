@@ -1,0 +1,46 @@
+@media screen and (max-width:1000px) and (max-height:1000px){
+    .proj{
+        width:95%;
+        padding:0 2.5%;
+        border-left:0;
+        border-right:0;
+        margin-bottom:.5rem;
+    }
+    .proj:nth-last-child(1){
+        margin-bottom:3rem;
+    }
+    .pCont{
+        max-width:100%;
+        top:50%;
+    }
+    .proj:nth-child(odd){
+        margin-left:0;
+        float:left;
+    }
+    .proj:nth-child(even){
+        margin-right:0;
+        float:left;
+    }
+}
+@media screen and (max-width:50rem){
+    #mainLinkLeft{
+        bottom:9rem;
+        left:1.5rem;
+    }
+    .mainLink{
+        font-size: 1.5rem;
+        left:1.5rem;
+    }
+    .projImg{
+        max-width:100%;
+    }
+}
+@media screen and (max-width:30rem){
+    #mainLinkLeft,#mainLinkRight{
+        font-size: 1rem;
+        left:1rem;
+    }
+    #mainLinkLeft{
+        bottom:8rem;
+    }
+}
