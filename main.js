@@ -7,7 +7,7 @@ async function start(){
     let ban = await banData.json();
     let projData = await fetch("/project.json");
     let proj = await projData.json();
-    document.querySelector("#arrow").addEventListener("click",scrollDn);
+    document.querySelector("#arrowCont").addEventListener("click",scrollDn);
 
     banner(ban);
     project(proj);  

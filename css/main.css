@@ -56,20 +56,23 @@ body{
 #mainLinkRight{
     right:5rem;
 }
-#arrow{
+#arrowCont{
     cursor:pointer;
     font-size: 7rem;
     z-index: -1;
     position: absolute;
     left:50%;
     transform: translate(-50%);
-    margin:auto;
     bottom:2rem;
+    width: 100px;
+    text-align: center;
+}
+#arrowCont p{
+    width:100px;
     text-align: center;
     font-family: Pixel;
     animation:bounce 2s;
     animation-iteration-count: infinite;
-    transform: rotate(180deg);
 }
 #ban1{
     top:0;
@@ -204,13 +207,13 @@ banner is fixed width before certain length (REM)
     100%{color:#b92e34;}
 }
 @keyframes bounce{
-    0%   { transform: rotate(180deg) scale(.95,.95)      translateY(0); }
-    10%  { transform: rotate(180deg) scale(1,.9)   translateY(0); }
-    30%  { transform: rotate(180deg) scale(.9,1)   translateY(+25px); }
-    50%  { transform: rotate(180deg) scale(1,.95) translateY(0); }
-    57%  { transform: rotate(180deg) scale(.95,.95)      translateY(+2.5px); }
-    64%  { transform: rotate(180deg) scale(.95,.95)      translateY(0); }
-    100% { transform: rotate(180deg) scale(.95,.95)      translateY(0); }
+    0%   { transform: rotate(180deg) scale(1,1)      translateY(0); }
+    10%  { transform: rotate(180deg) scale(1.05,.95)   translateY(0); }
+    30%  { transform: rotate(180deg) scale(.95,1.05)   translateY(25px); }
+    50%  { transform: rotate(180deg) scale(1.05,1) translateY(0); }
+    57%  { transform: rotate(180deg) scale(1,1)      translateY(2.5px); }
+    64%  { transform: rotate(180deg) scale(1,1)      translateY(0); }
+    100% { transform: rotate(180deg) scale(1,1)      translateY(0); }
 }
 @keyframes scroll{
     from {left:-400px}
