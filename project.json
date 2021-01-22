@@ -15,14 +15,14 @@
     },
     {
         "title":"SAGAN",
-        "desc":"A spatial generative adversarial network model can generate synthetic astronomical 'observations' that are statistically indistinguishable from the real thing. We can use the same model to generate ridiculous amounts of data, like a <a href='http://star.herts.ac.uk/~jgeach/gdf.html' style='color:#F72119'><i><b>7.8 billion</b></i> pixel synthetic observation</a>. Blog post <a href='blog/1604081789_sagan.html' style='color:#F72119'>here</a>.",
+        "desc":"A spatial generative adversarial network model can generate synthetic astronomical 'observations' that are statistically indistinguishable from the real thing. We can use the same model to generate ridiculous amounts of data, like a <a href='http://star.herts.ac.uk/~jgeach/gdf.html' style='color:#F72119'><i><b>7.8 billion</b></i> pixel synthetic observation</a>.",
         "img":"img/spaceInOut2.gif",
         "gitLink":"https://github.com/Smith42/XDF-GAN",
         "pLink":"https://doi.org/10.1093/mnras/stz2886"
     },
     {
         "title":"Pix2Prof",
-        "desc":"Language models can be applied to astronomy! A ResNet-18 => Gated Recurrent Unit (GRU) encoder--decoder model is used to accurately 'caption' galaxy images with light profile data. Blog post <a href='blog/1604082906_pix2prof.html' style='color:#f535aa'>here</a>.",
+        "desc":"Language models can be applied to astronomy! A ResNet-18 => Gated Recurrent Unit (GRU) encoder--decoder model is used to accurately 'caption' galaxy images with light profile data.",
         "img":"img/p2p_simple.png",
         "gitLink":"https://github.com/Smith42/pix2prof",
         "pLink":"https://arxiv.org/abs/2010.00622"
