@@ -32,13 +32,13 @@ body{
     top:42.5%;
     transform:translate(0,-50%);
     font-family: Pixel;
-    font-size: 10vw;
+    font-size: 6vw;
     margin-top:2.5rem;
     width:100%;
     word-wrap:break-word;
     text-align: center;
     cursor:default;
-    animation:flash 1.25s alternate ease-in-out;
+    animation:flash 2.50s alternate ease-in-out;
     animation-iteration-count: infinite;
 }
 .mainLink{
@@ -50,8 +50,23 @@ body{
     font-size: 2rem;
     min-width: max-content;
 }
+.mainLinkTop{
+    position:absolute;
+    top:7rem;
+    color:white;
+    text-decoration: underline;
+    font-family: pixel;
+    font-size: 2rem;
+    min-width: max-content;
+}
 #mainLinkLeft{
     left:5rem;
+}
+#mainLinkTopRight{
+    right:5rem;
+}
+#mainLinkCentre{
+    right:25rem;
 }
 #mainLinkRight{
     right:5rem;
@@ -105,10 +120,56 @@ main{
 a{
     text-decoration: none;
 }
+.blog{
+    font-family: sans-serif;
+    max-width:100%;
+    margin:auto;
+    padding:.5rem;
+    margin-bottom:2rem;
+    background:rgba(0, 0, 0, 0.4);
+    z-index:0;
+    text-align: left;
+    width:60rem;
+    margin: 1.5rem auto;
+}
+.blog h1{
+    font-family: Pixel;
+    font-size: 2rem;
+    left:0%;
+    /*animation:flash 1.25s alternate ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: -.5s;*/
+}
+#hlink{
+    color: white;
+    text-decoration: underline;
+    font-size: 1.25rem;
+    font-family: Pixel;
+}
+#hlinkbig{
+    color: white;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    font-family: Pixel;
+}
+#abs{
+    color: white;
+    font-size: 1.25rem;
+}
+.blog a{
+    color: white;
+    text-decoration: underline;
+}
+.blog p{
+    font-size: 1.25rem;
+    left:0%;
+    height:auto;
+    margin: 1.5rem auto;
+    color:#cccccc;
+}
 .proj{
     border-top: 10px solid;
     font-family: sans-serif;
-    max-width:100%;
     margin:auto;
     padding:.5rem;
     margin-bottom:2rem;
@@ -154,8 +215,9 @@ a{
     font-size: 1.5rem;
     left:0;
     top:40%;
+    width:80%;
     height:auto;
-    margin-bottom:1rem;
+    margin:1rem auto ;
     color:#cccccc;
     text-align: center;
 }

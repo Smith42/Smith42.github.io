@@ -12,12 +12,12 @@ background: black;}
     -moz-transform:translateX(-100%);
     -webkit-transform:translateX(-100%);	
     transform:translateX(-100%);
-    -moz-animation: scroll 20s linear infinite;
-    -webkit-animation: scroll 20s linear infinite;
-    animation: scroll 20s linear infinite;
+    -moz-animation: scroll 30s linear infinite;
+    -webkit-animation: scroll 30s linear infinite;
+    animation: scroll 30s linear infinite;
 }
 #inner11,#inner21{
-    animation-delay:-10s;
+    animation-delay:-15s;
 }
 #inner11 a,#inner12 a,#inner21 a,#inner22 a{
     display:block;
@@ -31,12 +31,12 @@ background: black;}
 }
 @media screen and (max-width:1000px) and (max-height:1000px){
     .inner{
-        -moz-animation: scroll 30s linear infinite;
-        -webkit-animation: scroll 30s linear infinite;
-        animation: scroll 30s linear infinite;
+        -moz-animation: scroll 35s linear infinite;
+        -webkit-animation: scroll 35s linear infinite;
+        animation: scroll 35s linear infinite;
     }
     #inner11,#inner21{
-        animation-delay:-15s;
+        animation-delay:-17.5s;
     }
 }
 

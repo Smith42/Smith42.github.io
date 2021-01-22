@@ -1,5 +1,5 @@
 let colour = ["#77ff77","#ff6961","#fc107f","#02897e","aqua", "white"];
-let bannerSpeed = .5;
+let bannerSpeed = 1;
 window.addEventListener("load",start);
 
 async function start(){
@@ -55,6 +55,7 @@ function banner(ban){
     //append top to top banner
     let num = 0;
     for (item of top){
+        // Random colour gen
         rand = Math.floor(Math.random()*colour.length);
         if (rand == privRand && rand == 0){
             rand += 1;
@@ -65,6 +66,7 @@ function banner(ban){
             rand > 0 ? rand = rand-1 : rand = rand+1;
         }
         privRand = rand;
+        // text content gen
         item.textContent = ban[num].text;
         item.href = ban[num].link;
         item.style.color = colour[rand];
@@ -154,10 +156,13 @@ function project(proj){
 
         div.appendChild(h1);
         if(item.pLink != ""){
+            // pLink is for arxiv
             arxivLink.appendChild(arxiv);
             gitLink.classList = "gitLink gitLinkMul";
         }
-        gitLink.appendChild(git);
+        if(item.gitLink != ""){
+            gitLink.appendChild(git);
+        }
         pCont.appendChild(p);
         pCont.appendChild(arxivLink);
         pCont.appendChild(gitLink);

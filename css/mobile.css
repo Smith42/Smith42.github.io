@@ -11,6 +11,7 @@
     }
     .pCont{
         max-width:100%;
+        width:100%;
         top:50%;
     }
     .proj:nth-child(odd){
@@ -23,8 +24,19 @@
     }
 }
 @media screen and (max-width:50rem){
+    #title{
+        font-size: 8vw;
+    }
     #mainLinkLeft{
         bottom:9rem;
+        left:1.5rem;
+    }
+    #mainLinkTopRight{
+        top:9rem;
+        left:1.5rem;
+    }
+    .mainLinkTop{
+        font-size: 1.5rem;
         left:1.5rem;
     }
     .mainLink{
@@ -34,13 +46,22 @@
     .projImg{
         max-width:100%;
     }
+    .pCont{
+        width:100%;
+    }
 }
 @media screen and (max-width:30rem){
-    #mainLinkLeft,#mainLinkRight{
+    #mainLinkLeft, #mainLinkTopLeft, #mainLinkTopRight, #mainLinkRight{
         font-size: 1rem;
         left:1rem;
     }
     #mainLinkLeft{
         bottom:8rem;
+    }
+    #mainLinkTopRight{
+        top:8rem;
+    }
+    .pCont{
+        width:100%;
     }
 }
