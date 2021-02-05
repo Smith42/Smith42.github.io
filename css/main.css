@@ -231,6 +231,7 @@ a{
 #Heart-CNN .projImg{
     margin: 1rem auto;
 }
+
 /*#Neuralnet-MCG .projImg{
 *    width: 33%;
 *    }
@@ -247,8 +248,8 @@ a{
     .pCont{
         position: relative;
         left:2.5%;
-       width:40%;
-       display: inline-block;
+        width:40%;
+        display: inline-block;
     }
     .pCont p{
         font-size: 1.75rem;
@@ -261,6 +262,10 @@ a{
         transform: translate(0);
         max-height:90%;
         display: inline-block;
+    }
+    .proj[id="About me"] .pCont{
+        left:25%;
+        width:50%;
     }
 } 
 /*
