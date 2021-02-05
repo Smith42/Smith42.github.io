@@ -9,9 +9,16 @@
     {
         "title":"Neuralnet-MCG",
         "desc":"A convolutional neural net (CNN) can successfully diagnose heart attack symptoms in ECG scans. A 3D CNN can also successfully diagnose heart attacks in a magnetocardiogram (MCG) video.  We correctly find that the ST section of an ECG/MCG is the most diagnostic part for detecting myocardial infarctions!",
-        "img":"img/neuralnet-mcg.gif",
+        "img":"img/3D-Data-Example.gif",
         "gitLink":"https://github.com/Smith42/neuralnet-mcg",
         "pLink":"reports/smith_mike_ML_report.pdf"
+    },
+    {
+        "title":"Heart-CNN",
+        "desc":"A 3D siamese CNN finds dead cells in heart tomography scans.",
+        "img":"img/mapping.png",
+        "gitLink":"https://github.com/Smith42/heart-cnn",
+        "pLink":"reports/dm_conference.pdf"
     },
     {
         "title":"SAGAN",
