@@ -224,9 +224,12 @@ a{
 .proj:nth-last-child(1){
     margin-bottom:5rem;
 }
-#Neuralnet-MCG .projImg, #Heart-CNN .projImg{
+#Neuralnet-MCG .projImg{
     margin: 1rem auto;
     min-height: 75%;
+}
+#Heart-CNN .projImg{
+    margin: 1rem auto;
 }
 /*#Neuralnet-MCG .projImg{
 *    width: 33%;
