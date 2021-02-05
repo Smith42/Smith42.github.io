@@ -226,6 +226,7 @@ a{
 }
 #Neuralnet-MCG .projImg, #Heart-CNN .projImg{
     margin: 1rem auto;
+    min-height: 75%;
 }
 /*#Neuralnet-MCG .projImg{
 *    width: 33%;
