@@ -120,6 +120,9 @@ main{
 a{
     text-decoration: none;
 }
+.aligncentre {
+    text-align: center;
+}
 .blog{
     font-family: sans-serif;
     max-width:100%;
