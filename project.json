@@ -34,6 +34,13 @@
         "gitLink":"https://github.com/Smith42/pix2prof",
         "pLink":"https://arxiv.org/abs/2010.00622"
 
+    },
+    {
+        "title":"AstroDDPM",
+        "desc":"A denoising diffusion probabilistic model can synthesise galaxies that are qualitatively and physically indistinguishable from the real thing. They can also remove satellite trails, and 'galaxify' images. <a href='thisisnotagalaxy' style='color:#ffff00'>Click here to cycle through some fake galaxies</a>.",
+        "img":"img/galaxies.gif",
+        "gitLink":"https://github.com/Smith42/astroddpm",
+        "pLink":""
     }
 ]
     
