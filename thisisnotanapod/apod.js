@@ -3,7 +3,7 @@ let imgLst = ["00003.png", "00004.png", "00008.png", "00009.png", "00010.png", "
 window.addEventListener("load",init);
 
 function init(){
-    document.querySelector("#image").addEventListener("click",randomPic);
+    document.body.addEventListener("click",randomPic);
     randomPic();
 }
 

@@ -114,18 +114,21 @@ function project(proj){
     for (item of proj){
         const div = document.createElement("div");
         div.classList = "proj";
-        div.id = item.title;
+        div.id = item.id || item.title;
+
+        const info = document.createElement("div");
+        info.classList = "projInfo";
         
         const pCont = document.createElement("div");
         pCont.classList = "pCont";
 
         //git Link and Img
         const gitLink = document.createElement("a");
-        gitLink.href = item.gitLink;
+        gitLink.href = item.gitLink || item.thesisLink;
         gitLink.classList = "gitLink";
         const git = document.createElement("img");
         git.classList = "gitImg";
-        git.src = "img/github.png";
+        git.src = item.gitLink ? "img/github.png" : "img/gradCap.png";
         //arxiv link and img
         const arxivLink = document.createElement("a");
         arxivLink.classList = "arxivLink";
@@ -166,8 +169,11 @@ function project(proj){
         pCont.appendChild(p);
         pCont.appendChild(arxivLink);
         pCont.appendChild(gitLink);
-        div.appendChild(pCont);
-        div.appendChild(img);
+        info.appendChild(pCont);
+        if(item.img){
+            info.appendChild(img);
+        }
+        div.appendChild(info);
         // link.appendChild(div);
         cont.appendChild(div);
     }

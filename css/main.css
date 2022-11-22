@@ -74,7 +74,7 @@ body{
 #arrowCont{
     cursor:pointer;
     font-size: 2rem;
-    z-index: -1;
+    z-index: 1;
     position: absolute;
     left:50%;
     transform: translate(-50%);
@@ -96,6 +96,7 @@ body{
     bottom:0;
 }
 #ban1,#ban2{
+    transition: 1s;
     overflow: hidden;
     font-family:Pixel;
     min-width:100%;
@@ -129,7 +130,6 @@ a{
     margin:auto;
     padding:.5rem;
     margin-bottom:2rem;
-    background:rgba(0, 0, 0, 0.4);
     z-index:0;
     text-align: left;
     width:60rem;
@@ -139,9 +139,6 @@ a{
     font-family: Pixel;
     font-size: 2rem;
     left:0%;
-    /*animation:flash 1.25s alternate ease-in-out;
-    animation-iteration-count: infinite;
-    animation-delay: -.5s;*/
 }
 #hlink{
     color: white;
@@ -170,13 +167,23 @@ a{
     margin: 1.5rem auto;
     color:#cccccc;
 }
+.projInfo{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    margin:0 10%;
+}
+#aboutMe .projInfo{
+    display:flex;
+    align-items: center;
+    justify-content: center !important;
+}
 .proj{
     border-top: 10px solid;
     font-family: sans-serif;
     margin:auto;
     padding:.5rem;
     margin-bottom:2rem;
-    background:rgba(0, 0, 0, 0.4);
     z-index:0;
 }
 .proj h1{
@@ -193,12 +200,7 @@ a{
     text-decoration: underline;
 }
 .projImg{
-    max-width:50rem;
-    margin:auto;
-    /* transition:1s; */
-    position: relative;
-    left:50%;
-    transform: translate(-50%);
+    max-width:40%;
 }
 .gitLink,.arxivLink{
     width:3rem;
@@ -218,27 +220,14 @@ a{
     font-size: 1.5rem;
     left:0;
     top:40%;
-    width:80%;
+    width:50%;
     height:auto;
-    margin:1rem auto ;
     color:#cccccc;
     text-align: center;
 }
 .proj:nth-last-child(1){
     margin-bottom:5rem;
 }
-#Neuralnet-MCG .projImg{
-    margin: 1rem auto;
-    min-height: 75%;
-}
-#Heart-CNN .projImg{
-    margin: 1rem auto;
-}
-
-/*#Neuralnet-MCG .projImg{
-*    width: 33%;
-*    }
-*/
 /* 
  * More than 1600px 
  */
@@ -248,28 +237,11 @@ a{
         display:block;
         position: relative;
     }
-    .pCont{
-        position: relative;
-        left:2.5%;
-        width:40%;
-        display: inline-block;
-    }
     .pCont p{
         font-size: 1.75rem;
     }
-    .projImg{
-        position: absolute;
-        right:2.5%;
-        bottom:0;
-        z-index: -1;
-        transform: translate(0);
-        max-height:90%;
-        display: inline-block;
-    }
-    .proj[id="About me"] .pCont{
-        left:25%;
-        width:50%;
-    }
+    
+
 } 
 /*
 banner is auto width after certain length
@@ -286,6 +258,14 @@ banner is fixed width before certain length (REM)
     60%{color:#ff6961;}
     80%{color:#fc107f;}
     100%{color:#b92e34;}
+}
+@keyframes backgroundFlash{
+    0%{background:#02897e;}
+    20%{background:aqua;}
+    40%{background:#77ff77;}
+    60%{background:#ff6961;}
+    80%{background:#fc107f;}
+    100%{background:#b92e34;}
 }
 @keyframes bounce{
     0%   { transform: scale(1,1)      translateY(0); }

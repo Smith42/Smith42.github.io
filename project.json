@@ -1,6 +1,7 @@
 [
     {
         "title":"About me",
+        "id":"aboutMe",
         "desc":"I'm Mike. I'm interested in applying deep learning to cross-disciplinary problems in astrophysics, earth observation, medical imaging, and other fields.",
         "img":"",
         "gitLink":"",
@@ -8,9 +9,10 @@
     },
     {
         "title":"Astronomia ex machina",
-        "desc":"A review on neural networks in astronomy, where we predict that enormous foundation models will play a big role in astronomy's future. This 'github' link points to my thesis, which this review is based off of.",
+        "id":"astornomiaExMachina",
+        "desc":"A review on neural networks in astronomy, where we predict that enormous foundation models will play a big role in astronomy's future. The mortarboard icon points to my thesis, which this review is based off of.",
         "img":"img/galaxy.gif",
-        "gitLink":"reports/mikes_thesis.pdf",
+        "thesisLink":"reports/mikes_thesis.pdf",
         "pLink":"https://arxiv.org/abs/2211.03796"
     },
     {
