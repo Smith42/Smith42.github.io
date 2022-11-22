@@ -2,7 +2,7 @@ let col = ["#77ff77","#ff6961","#fc107f","#02897e","#ffffff"];
 let moving=[
     {text:"wow",start:false,width:0,colour:col[0],dx:2,dy:2,x:window.innerWidth/2,y:window.innerHeight/3},
     {text:"such space",start:false,width:0,colour:col[1],dx:1,dy:-1,x:window.innerWidth/2,y:window.innerHeight/3},
-    {text:"many nural network",start:false,width:0,colour:col[2],dx:1,dy:2,x:window.innerWidth/2,y:window.innerHeight/2},
+    {text:"many nural network",start:false,width:0,colour:col[2],dx:1,dy:2,x:window.innerWidth/2-150,y:window.innerHeight/2},
     {text:"dip lern",start:false,width:0,colour:col[3],dx:-1,dy:3,x:window.innerWidth/2,y:window.innerHeight/2},
     {img:"fun/sunGlassesGalaxy.png",start:false,rot:2,dx:-1,dy:-1,x:window.innerWidth/2,y:window.innerHeight/4}
 ];
@@ -36,10 +36,6 @@ function funifyFunc(e){
 
     funCont.style.display = "block";
 
-    const ban1 = document.querySelector("#ban1");
-    const ban2 = document.querySelector("#ban2");
-    // ban1.style.top = "-5rem";
-    // ban2.style.bottom = "-5rem";
     if(funMode){
         document.body.style.background = "#02897e";
         document.body.style.animation = "backgroundFlash 2.50s alternate ease-in-out infinite";
@@ -51,8 +47,6 @@ function funifyFunc(e){
             }
         }
         startConfetti();
-        // ban1.style.setProperty("font-family","'Comic Sans MS', 'Comic Sans'","important");
-        // body.style.fontFamily = "cursive";
     }
     else{
         document.body.style.background = "black";
@@ -148,7 +142,6 @@ function draw(){
 
 }
 function resize(e){
-    console.log(e);
     if(e.type == "resize"){
         for(m of moving){
             m.x = window.innerWidth/2-m.width/2;
