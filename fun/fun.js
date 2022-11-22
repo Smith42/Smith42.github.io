@@ -42,7 +42,7 @@ function funifyFunc(e){
         resize(moving);
         for(a of all){
             if(a.id != "funOff"){
-                a.style.setProperty("font-family","'Comic Sans MS', 'Comic Sans', cursive"); 
+                a.style.setProperty("font-family","funFont"); 
             }else{
             }
         }
@@ -89,7 +89,7 @@ function draw(){
     const textHeight = 30;
     
     ctx.clearRect(0, 0, funCont.width, funCont.height);
-    ctx.font = `${textHeight}px Comic Sans MS, Comic Sans, cursive`;
+    ctx.font = `${textHeight}px funFont`;
 
     for (m of moving){
         ctx.fillStyle = m.colour || "#ffffff";

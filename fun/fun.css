@@ -51,14 +51,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Comic Sans MS", "Comic Sans";
+    font-family: funFont;
 }
 /* #funToggle p{
     height:100%;
     text-align: center;
 } */
 .funText{
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: funFont;
     position:relative;
     top:0%;
     left:50%;
@@ -66,6 +66,10 @@
 @font-face{
     font-family: Pixel;
     src:url(../font/Pixellari.ttf);
+}
+@font-face{
+    font-family: funFont;
+    src:url(../font/comicSans.TTF);
 }
 
 @media screen and (max-width:50rem){
