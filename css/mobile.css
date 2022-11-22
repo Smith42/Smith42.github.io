@@ -63,12 +63,7 @@
     .pCont{
         width:100%;
     }
-    #funify{
-        top:15rem !important;
-        left:50%;
-        transform: translate(-50%);
-        width:fit-content;
-    }
+    
 }
 @media screen and (max-width:30rem){
     #mainLinkLeft, #mainLinkTopLeft, #mainLinkTopRight, #mainLinkRight{

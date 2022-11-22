@@ -67,3 +67,25 @@
     font-family: Pixel;
     src:url(../font/Pixellari.ttf);
 }
+
+@media screen and (max-width:50rem){
+    #funify{
+        top:9.5rem;
+        left:1.5rem;
+        width:fit-content;
+    }
+    #funToggle{
+        height:1.5rem;
+        font-size: .8rem;
+    }
+    #funOff, #funOn{
+        height:1.25rem;
+        width:1.25rem;
+    }
+}
+@media screen and (max-width:30rem){
+    #funify{
+        top:8.5rem;
+        left:1rem;
+    }
+}
