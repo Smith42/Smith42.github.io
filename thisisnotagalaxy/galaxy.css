@@ -7,34 +7,21 @@ html,body{
     width:100%;
 }
 body{
+    height:100%;
     background:black;
     cursor: pointer;
-}
-#title{
-    width:100%;
-    text-align: center;
-    position: absolute;
-    top:15%;
-}
-#title{
     font-family: Pixel;
     color:#ffff00;
+    font-size: 1rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
-#lowtitle{
+#title,#lowtitle{
     width:100%;
     text-align: center;
-    position: absolute;
-    bottom:10%;
-}
-#lowtitle{
-    font-family: Pixel;
-    color:#ffff00;
-}
-#image{
-    position: absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%,-50%);
+    
 }
 a {
     color:#AC4FC6;
