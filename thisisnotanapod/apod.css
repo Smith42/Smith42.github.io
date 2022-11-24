@@ -17,11 +17,17 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    user-select: none;
 }
 #title,#lowtitle{
     width:100%;
     text-align: center;
-    
+}
+#image{
+    height:25%;
+}
+#image img{
+    height:100%;
 }
 
 @font-face{
