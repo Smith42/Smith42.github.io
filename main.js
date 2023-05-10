@@ -1,5 +1,5 @@
 let colour = ["#77ff77","#ff6961","#fc107f","#02897e","aqua", "white"];
-let bannerSpeed = 1;
+let bannerSpeed = 0.1;
 window.addEventListener("load",start);
 
 async function start(){

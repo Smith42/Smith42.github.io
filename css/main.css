@@ -38,7 +38,7 @@ body{
     word-wrap:break-word;
     text-align: center;
     cursor:default;
-    animation:flash 2.50s alternate ease-in-out;
+    animation:flash 20s alternate ease-in-out;
     animation-iteration-count: infinite;
 }
 .mainLink{
@@ -86,8 +86,8 @@ body{
     width:100%;
     text-align: center;
     font-family: Pixel;
-    animation:bounce 2s;
-    animation-iteration-count: infinite;
+   /* animation:bounce 2s;
+    animation-iteration-count: infinite;*/
 }
 #ban1{
     top:0;
@@ -191,9 +191,8 @@ a{
     margin:1.5rem;
     font-size: 3rem;
     text-align: center;
-    animation:flash 1.25s alternate ease-in-out;
+    animation:flash 20s alternate ease-in-out;
     animation-iteration-count: infinite;
-    animation-delay: -.5s;
 }
 .proj a{
     color: white;

@@ -1,9 +1,9 @@
 let col = ["#77ff77","#ff6961","#fc107f","#02897e","#ffffff"];
 let moving=[
-    {text:"wow",start:false,width:0,colour:col[0],dx:2,dy:2,x:window.innerWidth/2,y:window.innerHeight/3},
-    {text:"such space",start:false,width:0,colour:col[1],dx:1,dy:-1,x:window.innerWidth/2,y:window.innerHeight/3},
-    {text:"many nural network",start:false,width:0,colour:col[2],dx:1,dy:2,x:window.innerWidth/2-150,y:window.innerHeight/2},
-    {text:"dip lern",start:false,width:0,colour:col[3],dx:-1,dy:3,x:window.innerWidth/2,y:window.innerHeight/2},
+    //{text:"wow",start:false,width:0,colour:col[0],dx:2,dy:2,x:window.innerWidth/2,y:window.innerHeight/3},
+    //{text:"such space",start:false,width:0,colour:col[1],dx:1,dy:-1,x:window.innerWidth/2,y:window.innerHeight/3},
+    //{text:"many nural network",start:false,width:0,colour:col[2],dx:1,dy:2,x:window.innerWidth/2-150,y:window.innerHeight/2},
+    //{text:"dip lern",start:false,width:0,colour:col[3],dx:-1,dy:3,x:window.innerWidth/2,y:window.innerHeight/2},
     {img:"fun/sunGlassesGalaxy.png",start:false,rot:2,dx:-1,dy:-1,x:window.innerWidth/2,y:window.innerHeight/4}
 ];
 let funMode = false;
@@ -37,15 +37,15 @@ function funifyFunc(e){
     funCont.style.display = "block";
 
     if(funMode){
-        document.body.style.background = "#02897e";
-        document.body.style.animation = "backgroundFlash 2.50s alternate ease-in-out infinite";
+        //document.body.style.background = "#02897e";
+        //document.body.style.animation = "backgroundFlash 2.50s alternate ease-in-out infinite";
         resize(moving);
-        for(a of all){
-            if(a.id != "funOff"){
-                a.style.setProperty("font-family","funFont"); 
-            }else{
-            }
-        }
+        //for(a of all){
+        //    if(a.id != "funOff"){
+        //        a.style.setProperty("font-family","funFont"); 
+        //    }else{
+        //    }
+        //}
         startConfetti();
     }
     else{
