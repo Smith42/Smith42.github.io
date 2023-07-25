@@ -2,8 +2,8 @@
     {
         "title":"About me",
         "id":"aboutMe",
-        "desc":"I'm Mike. I'm interested in applying deep learning to cross-disciplinary problems in astrophysics, earth observation, medical imaging, and other fields.",
-        "img":"",
+        "desc":"I'm Mike. I'm interested in applying deep learning to cross-disciplinary problems in astrophysics, earth observation, medical imaging, and other fields. My CV is <a href=reports/smith_mike.pdf>here</a>.",
+        "img":"img/smith_mike.png",
         "gitLink":"",
         "pLink":""
     },
