@@ -1,15 +1,19 @@
 [
     {
         "title":"About me",
-        "id":"aboutMe",
         "desc":"I'm Mike. I'm interested in applying deep learning to cross-disciplinary problems in astrophysics, earth observation, medical imaging, and other fields. My CV is <a href=reports/smith_mike.pdf>here</a>.",
         "img":"",
         "gitLink":"",
         "pLink":""
     },
     {
+        "title":"EarthPT",
+        "desc":"A Large Observation (foundation) Model for Earth Observation that can accurately forecast the future. We can also extract the latent space of the model to find the most important features for downstream tasks.",
+        "img":"img/3d.gif",
+        "pLink":"https://arxiv.org/abs/2309.07207"
+    },
+    {
         "title":"Astronomia ex machina",
-        "id":"astornomiaExMachina",
         "desc":"A review on neural networks in astronomy, where we predict that enormous foundation models will play a big role in astronomy's future. The mortarboard icon points to my thesis, which this review is based off of.",
         "img":"img/aem.jpg",
         "thesisLink":"reports/mikes_thesis.pdf",
