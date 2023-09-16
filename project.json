@@ -10,6 +10,7 @@
         "title":"EarthPT",
         "desc":"A Large Observation (foundation) Model for Earth Observation that can accurately forecast the future. We can also extract the latent space of the model to find the most important features for downstream tasks.",
         "img":"img/3d.gif",
+        "thesisLink":"https://arxiv.org/abs/2309.07207",
         "pLink":"https://arxiv.org/abs/2309.07207"
     },
     {
