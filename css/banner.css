@@ -11,12 +11,12 @@ html{overflow-x: hidden;}
     -moz-transform:translateX(-100%);
     -webkit-transform:translateX(-100%);	
     transform:translateX(-100%);
-    -moz-animation: scroll 90s linear infinite;
-    -webkit-animation: scroll 90s linear infinite;
-    animation: scroll 90s linear infinite;
+    -moz-animation: scroll 180s linear infinite;
+    -webkit-animation: scroll 180s linear infinite;
+    animation: scroll 180s linear infinite;
 }
 #inner11,#inner21{
-    animation-delay:-45s;
+    animation-delay:-90s;
 }
 #inner11 a,#inner12 a,#inner21 a,#inner22 a{
     display:block;
@@ -30,12 +30,12 @@ html{overflow-x: hidden;}
 }
 @media screen and (max-width:1000px) and (max-height:1000px){
     .inner{
-        -moz-animation: scroll 105s linear infinite;
-        -webkit-animation: scroll 105s linear infinite;
-        animation: scroll 105s linear infinite;
+        -moz-animation: scroll 210s linear infinite;
+        -webkit-animation: scroll 210s linear infinite;
+        animation: scroll 210s linear infinite;
     }
     #inner11,#inner21{
-        animation-delay:-52.5s;
+        animation-delay:-105s;
     }
 }
 
