@@ -9,7 +9,7 @@
     {
         "title":"AstroPT",
         "desc":"Can we apply large observation models to astronomy? Of course we can! We find that neural scaling laws can predict how well a neural net performs on astronomically useful downstream tasks. We also suggest a FOSS approach for further developing these models.",
-        "img":"img/astropt.png",
+        "img":"img/carmeme-2.png",
         "gitLink":"https://github.com/Smith42/astroPT",
         "pLink":"https://arxiv.org/abs/2405.14930"
     },
