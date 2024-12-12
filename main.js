@@ -136,6 +136,13 @@ function project(proj){
         const arxiv = document.createElement("img");
         arxiv.src = "img/arxiv.ico";
         arxiv.classList = "arxivImg";
+        //blog link and img
+        const blogLink = document.createElement("a");
+        blogLink.classList = "blogLink";
+        blogLink.href = item.blogLink;
+        const blog = document.createElement("img");
+        blog.src = "img/blog.png";
+        blog.classList = "blogImg";
         
         const h1 = document.createElement("h1");
         const p = document.createElement("p");
@@ -161,14 +168,18 @@ function project(proj){
         if(item.pLink != ""){
             // pLink is for arxiv
             arxivLink.appendChild(arxiv);
-            gitLink.classList = "gitLink gitLinkMul";
+            //gitLink.classList = "gitLink gitLinkMul";
         }
         if(item.gitLink != ""){
             gitLink.appendChild(git);
         }
+        if(item.blogLink != ""){
+            blogLink.appendChild(blog);
+        }
         pCont.appendChild(p);
         pCont.appendChild(arxivLink);
         pCont.appendChild(gitLink);
+        pCont.appendChild(blogLink);
         info.appendChild(pCont);
         if(item.img){
             info.appendChild(img);

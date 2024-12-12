@@ -202,18 +202,21 @@ a{
 .projImg{
     max-width:40%;
 }
-.gitLink,.arxivLink{
+.gitLink,.arxivLink,.blogLink{
     width:3rem;
     position: relative;
     bottom:-1rem;
 }
 .gitLinkMul{
-    left:-5rem;
+    left:rem;
 }
 .arxivLink{
-    right:-5rem;
+    right:5rem;
 }
-.gitImg,.arxivImg{
+.blogLink{
+    left:5rem;
+}
+.gitImg,.arxivImg,.blogImg{
     height:2.5rem;
 }
 .pCont{
@@ -283,4 +286,58 @@ banner is fixed width before certain length (REM)
 @keyframes scroll{
     from {left:-400px}
     to{left:200px}
+}
+
+footer {
+    background: black;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: Pixel;
+    font-size: 1.5rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-gif {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 600px) {
+    .footer-gif {
+        height: 20px;
+    }
+
+    .footer-gifs {
+        gap: 1rem;
+    }
+
+    .footer-content {
+        gap: 1rem;
+        text-align: center;
+    }
 }
