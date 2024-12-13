@@ -11,6 +11,50 @@ async function start(){
 
     banner(ban);
     project(proj);  
+    initFloaters();
+}
+
+function initFloaters() {
+    const container = document.getElementById('float-container');
+    const gifUrl = 'fun/toast.gif';
+
+    function createFloater() {
+        const floater = document.createElement('div');
+        floater.className = 'floater';
+
+        // Slower duration (25-35 seconds instead of 15-20)
+        const duration = 25 + Math.random() * 10;
+        const startY = Math.random() * 100;
+
+        floater.style.setProperty('--duration', `${duration}s`);
+        floater.style.right = '-100px';
+        floater.style.top = `${startY}%`;
+
+        const img = document.createElement('img');
+        img.src = gifUrl;
+        img.style.opacity = '0.6'; // Make images slightly transparent
+        floater.appendChild(img);
+
+        container.appendChild(floater);
+
+        setTimeout(() => {
+            floater.remove();
+        }, duration * 1000);
+    }
+
+    // Create fewer initial floaters (3 instead of 15)
+    for (let i = 0; i < 3; i++) {
+        // More time between each creation (500ms instead of 200ms)
+        setTimeout(() => createFloater(), i * 500);
+    }
+
+    // Keep fewer maximum floaters (5 instead of 20)
+    // Create new ones less frequently (every 2 seconds instead of 1)
+    setInterval(() => {
+        if (container.children.length < 5) {
+            createFloater();
+        }
+    }, 2000);
 }
 
 function banner(ban){

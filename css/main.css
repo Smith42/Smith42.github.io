@@ -341,3 +341,25 @@ footer {
         text-align: center;
     }
 }
+
+.floater {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: fly var(--duration) linear forwards;
+}
+
+.floater img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes fly {
+    from {
+        transform: translate(0, 0) rotate(-10deg); /* Reduced rotation angle */
+    }
+    to {
+        transform: translate(-120vw, 30vh) rotate(-10deg); /* Less vertical movement */
+    }
+}
