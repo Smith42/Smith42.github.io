@@ -84,7 +84,8 @@ function initFloaters() {
     }, 2000);
 }
 
-function banner(ban){
+function banner(ban) {
+    // Horizontal banner containers
     const cont1 = document.querySelector("#ban1");
     const inner11 = document.createElement("div");
     inner11.id = "inner11";
@@ -99,6 +100,22 @@ function banner(ban){
     const inner22 = document.createElement("div");
     inner22.id = "inner22";
     inner22.classList = "inner";
+
+    // Vertical banner containers
+    const contLeft = document.querySelector("#banLeft");
+    const innerLeft1 = document.createElement("div");
+    innerLeft1.id = "innerLeft1";
+    innerLeft1.classList = "inner-vertical";
+    const innerLeft2 = document.createElement("div");
+    innerLeft2.id = "innerLeft2";
+    innerLeft2.classList = "inner-vertical";
+    const contRight = document.querySelector("#banRight");
+    const innerRight1 = document.createElement("div");
+    innerRight1.id = "innerRight1";
+    innerRight1.classList = "inner-vertical";
+    const innerRight2 = document.createElement("div");
+    innerRight2.id = "innerRight2";
+    innerRight2.classList = "inner-vertical";
 
     //top p
     let pt1 = document.createElement("a");
@@ -115,26 +132,28 @@ function banner(ban){
     let pb5 = document.createElement("a");
     let pb6 = document.createElement("a");
     //list of p
-    let p = [pt1,pt2,pt3,pt4,pt5,pt6,pb1,pb2,pb3,pb4,pb5,pb6];
-    let top = [pt1,pt2,pt3,pt4,pt5,pt6];
-    let bottom = [pb1,pb2,pb3,pb4,pb5,pb6];
+    let p = [pt1, pt2, pt3, pt4, pt5, pt6, pb1, pb2, pb3, pb4, pb5, pb6];
+    let top = [pt1, pt2, pt3, pt4, pt5, pt6];
+    let bottom = [pb1, pb2, pb3, pb4, pb5, pb6];
     let privRand = 0;
+
     //add attribute to every p
-    for (item of p){
+    for (item of p) {
         item.classList.add("move");
     }
+
     //append top to top banner
     let num = 0;
-    for (item of top){
+    for (item of top) {
         // Random colour gen
-        rand = Math.floor(Math.random()*colour.length);
-        if (rand == privRand && rand == 0){
+        rand = Math.floor(Math.random() * colour.length);
+        if (rand == privRand && rand == 0) {
             rand += 1;
-        }else if (rand==privRand){
-            rand-=1;
+        } else if (rand == privRand) {
+            rand -= 1;
         }
-        if (num == top.length-1 && colour[rand] == top[0].style.colour){
-            rand > 0 ? rand = rand-1 : rand = rand+1;
+        if (num == top.length - 1 && colour[rand] == top[0].style.colour) {
+            rand > 0 ? rand = rand - 1 : rand = rand + 1;
         }
         privRand = rand;
         // text content gen
@@ -150,19 +169,20 @@ function banner(ban){
         cont1.appendChild(inner12);
         num += 1;
     }
-    num = ban.length-1;
+
+    num = ban.length - 1;
     //append bottom to bottom banner
-    for (item of bottom){
-        rand = Math.floor(Math.random()*colour.length);
-        if (rand == privRand && rand == 0){
+    for (item of bottom) {
+        rand = Math.floor(Math.random() * colour.length);
+        if (rand == privRand && rand == 0) {
             rand += 1;
-        }else if (rand==privRand){
-            rand-=1;
+        } else if (rand == privRand) {
+            rand -= 1;
         }
-        if (num == bottom.length-1 && colour[rand] == bottom[0].style.colour){
-            rand > 0 ? rand=rand-1 : rand=rand+1;
+        if (num == bottom.length - 1 && colour[rand] == bottom[0].style.colour) {
+            rand > 0 ? rand = rand - 1 : rand = rand + 1;
         }
-        item.textContent = ban[num].text
+        item.textContent = ban[num].text;
         item.href = ban[num].link;
 
         privRand = rand;
@@ -176,6 +196,57 @@ function banner(ban){
         num -= 1;
     }
 
+    // Left vertical banner
+    for (let i = 0; i < ban.length; i++) {
+        let item = ban[i];
+
+        rand = Math.floor(Math.random() * colour.length);
+        if (rand == privRand && rand == 0) {
+            rand += 1;
+        } else if (rand == privRand) {
+            rand -= 1;
+        }
+        privRand = rand;
+
+        let link = document.createElement("a");
+        link.textContent = item.text;
+        link.href = item.link;
+        link.style.color = colour[rand];
+
+        let clone = link.cloneNode(true);
+
+        innerLeft1.appendChild(link);
+        innerLeft2.appendChild(clone);
+    }
+
+    // Right vertical banner (reverse order)
+    for (let i = ban.length - 1; i >= 0; i--) {
+        let item = ban[i];
+
+        rand = Math.floor(Math.random() * colour.length);
+        if (rand == privRand && rand == 0) {
+            rand += 1;
+        } else if (rand == privRand) {
+            rand -= 1;
+        }
+        privRand = rand;
+
+        let link = document.createElement("a");
+        link.textContent = item.text;
+        link.href = item.link;
+        link.style.color = colour[rand];
+
+        let clone = link.cloneNode(true);
+
+        innerRight1.appendChild(link);
+        innerRight2.appendChild(clone);
+    }
+
+    // Append vertical banners
+    contLeft.appendChild(innerLeft1);
+    contLeft.appendChild(innerLeft2);
+    contRight.appendChild(innerRight1);
+    contRight.appendChild(innerRight2);
 }
 function project(proj){
     const cont = document.querySelector("main");

@@ -1,61 +1,160 @@
-html{overflow-x: hidden;}
-.inner{
-    min-width:100%;
+html {
+    overflow-x: hidden;
+}
+
+/* Horizontal Banners */
+#ban1 {
+    top: 0;
+}
+
+#ban2 {
+    bottom: 0;
+}
+
+#ban1, #ban2 {
+    transition: 1s;
+    overflow: hidden;
+    font-family: Pixel;
+    min-width: 100%;
+    background: black;
+    z-index: 1;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    position: fixed;    
+}
+
+.inner {
+    min-width: 100%;
     overflow: hidden;
     position: relative;
     display: inline-grid;
-    grid-template-columns: repeat(6,auto);
+    grid-template-columns: repeat(6, auto);
     position: absolute;
     margin: 0;
     text-align: center;
-    -moz-transform:translateX(-100%);
-    -webkit-transform:translateX(-100%);	
-    transform:translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);	
+    transform: translateX(-100%);
     -moz-animation: scroll 180s linear infinite;
     -webkit-animation: scroll 180s linear infinite;
     animation: scroll 180s linear infinite;
 }
-#inner11,#inner21{
-    animation-delay:-90s;
-}
-#inner11 a,#inner12 a,#inner21 a,#inner22 a{
-    display:block;
-    margin:0 .25rem;
-    min-width:max-content;
-    width:100%;
-    white-space: nowrap;
-}
-#inner12,#inner22{
-    animation-delay: 0;
-}
-@media screen and (max-width:1000px) and (max-height:1000px){
-    .inner{
-        -moz-animation: scroll 210s linear infinite;
-        -webkit-animation: scroll 210s linear infinite;
-        animation: scroll 210s linear infinite;
-    }
-    #inner11,#inner21{
-        animation-delay:-105s;
-    }
+
+#inner11, #inner21 {
+    animation-delay: -90s;
 }
 
+#inner11 a, #inner12 a, #inner21 a, #inner22 a {
+    display: block;
+    margin: 0 .25rem;
+    min-width: max-content;
+    width: 100%;
+    white-space: nowrap;
+}
+
+#inner12, #inner22 {
+    animation-delay: 0;
+}
+
+/* Vertical Banners */
+#banLeft, #banRight {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 2rem;
+    background: black;
+    z-index: 1;
+    overflow: hidden;
+    font-family: Pixel;
+    font-size: 2rem;
+}
+
+#banLeft {
+    left: 0;
+}
+
+#banRight {
+    right: 0;
+}
+
+.inner-vertical {
+    min-height: 100%;
+    position: absolute;
+    display: inline-grid;
+    grid-template-rows: repeat(6, auto);
+    transform: translateY(-100%);
+    animation: scrollVertical 180s linear infinite;
+    margin: 0;
+    text-align: center;
+}
+
+#innerLeft1, #innerRight1 {
+    animation-delay: -90s;
+}
+
+.inner-vertical a {
+    display: block;
+    margin: 0.25rem 0;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    min-height: max-content;
+    height: 100%;
+    white-space: nowrap;
+}
+
+/* Animations */
 @-moz-keyframes scroll {
     0%   { -moz-transform: translateX(100%); }
     100% { -moz-transform: translateX(-100%); }
 }
+
 @-webkit-keyframes scroll {
     0%   { -webkit-transform: translateX(100%); }
     100% { -webkit-transform: translateX(-100%); }
 }
+
 @keyframes scroll {
     0%   { 
-        -moz-transform: translateX(100%); /* Firefox bug fix */
-        -webkit-transform: translateX(100%); /* Firefox bug fix */
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
         transform: translateX(100%); 		
     }
     100% { 
-        -moz-transform: translateX(-100%); /* Firefox bug fix */
-        -webkit-transform: translateX(-100%); /* Firefox bug fix */
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
         transform: translateX(-100%); 
+    }
+}
+
+@keyframes scrollVertical {
+    0% { 
+        -moz-transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+    100% { 
+        -moz-transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px) and (max-height: 1000px) {
+    .inner {
+        -moz-animation: scroll 210s linear infinite;
+        -webkit-animation: scroll 210s linear infinite;
+        animation: scroll 210s linear infinite;
+    }
+    #inner11, #inner21 {
+        animation-delay: -105s;
+    }
+    .inner-vertical {
+        animation: scrollVertical 210s linear infinite;
+    }
+    #innerLeft1, #innerRight1 {
+        animation-delay: -105s;
     }
 }
