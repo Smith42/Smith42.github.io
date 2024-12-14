@@ -16,23 +16,39 @@ async function start(){
 
 function initFloaters() {
     const container = document.getElementById('float-container');
-    
+
+    // Add probability to each image (numbers represent relative weights)
     const imageConfig = [
-        { src: 'fun/toast.gif', rotate:false },
-        { src: 'fun/shoggoth_telescope.png', rotate:true },
+        { src: 'fun/toast.gif', rotate: false, probability: 0.55 },
+        { src: 'fun/shoggoth_telescope.png', rotate: true, probability: 0.4 },
+        { src: 'fun/sunGlassesGalaxy.png', rotate: true, probability: 0.05 },
     ];
-    
+
+    function selectRandomImage() {
+        const random = Math.random();
+        let sum = 0;
+
+        for (const image of imageConfig) {
+            sum += image.probability;
+            if (random < sum) {
+                return image;
+            }
+        }
+        return imageConfig[0]; // fallback to first image
+    }
+
     function createFloater() {
         const floater = document.createElement('div');
         floater.className = 'floater';
-        
+
         const duration = 25 + Math.random() * 10;
         const startY = Math.random() * 100;
         const startRotation = Math.random() * 360;
-        const rotations = 2 + Math.random() * 4; // 2 to 6 rotations
-        
-        const imageInfo = imageConfig[Math.floor(Math.random() * imageConfig.length)];
-        
+        const rotations = 2 + Math.random() * 4;
+
+        // Use new selection function instead of random index
+        const imageInfo = selectRandomImage();
+
         if (imageInfo.rotate) {
             const endRotation = startRotation + (360 * rotations);
             floater.style.animation = `fly-rotate ${duration}s linear forwards`;
@@ -41,26 +57,26 @@ function initFloaters() {
         } else {
             floater.style.animation = `fly-straight ${duration}s linear forwards`;
         }
-        
+
         floater.style.right = '-100px';
         floater.style.top = `${startY}%`;
 
         const img = document.createElement('img');
         img.src = imageInfo.src;
         floater.appendChild(img);
-        
+
         container.appendChild(floater);
-        
+
         setTimeout(() => {
             floater.remove();
         }, duration * 1000);
     }
-    
+
     // Create initial floaters
     for (let i = 0; i < 3; i++) {
         setTimeout(() => createFloater(), i * 500);
     }
-    
+
     setInterval(() => {
         if (container.children.length < 5) {
             createFloater();
