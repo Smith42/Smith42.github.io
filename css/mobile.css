@@ -39,18 +39,20 @@
         font-size: 8vw;
     }
     #mainLinkLeft{
-        top:7rem;
+        bottom:9rem;
         left:1.5rem;
     }
     #mainLinkTopRight{
-        top:9rem;
+        top:11rem;
         left:1.5rem;
     }
     .mainLinkTop{
+        top:9rem;
         font-size: 1.5rem;
         left:1.5rem;
     }
     .mainLink{
+        bottom:11rem;
         font-size: 1.5rem;
         left:1.5rem;
     }
@@ -64,22 +66,4 @@
         width:100%;
     }
     
-}
-@media screen and (max-width:30rem){
-    #mainLinkLeft, #mainLinkTopLeft, #mainLinkTopRight, #mainLinkRight{
-        font-size: 1rem;
-        left:1rem;
-    }
-    #mainLinkLeft{
-        top:7rem;
-    }
-    #arrowCont{
-        font-size: 1rem;
-    }
-    #mainLinkTopRight{
-        top:8rem;
-    }
-    .pCont{
-        width:100%;
-    }
 }
