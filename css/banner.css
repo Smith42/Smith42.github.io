@@ -158,3 +158,9 @@ html {
         animation-delay: -105s;
     }
 }
+
+@media screen and (max-width: 1000px) {
+    #banLeft, #banRight {
+        display: none;
+    }
+}
