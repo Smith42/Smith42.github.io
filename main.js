@@ -16,40 +16,51 @@ async function start(){
 
 function initFloaters() {
     const container = document.getElementById('float-container');
-    const gifUrl = 'fun/toast.gif';
-
+    
+    const imageConfig = [
+        { src: 'fun/toast.gif', rotate:false },
+        { src: 'fun/shoggoth_telescope.png', rotate:true },
+    ];
+    
     function createFloater() {
         const floater = document.createElement('div');
         floater.className = 'floater';
-
-        // Slower duration (25-35 seconds instead of 15-20)
+        
         const duration = 25 + Math.random() * 10;
         const startY = Math.random() * 100;
-
-        floater.style.setProperty('--duration', `${duration}s`);
+        const startRotation = Math.random() * 360;
+        const rotations = 2 + Math.random() * 4; // 2 to 6 rotations
+        
+        const imageInfo = imageConfig[Math.floor(Math.random() * imageConfig.length)];
+        
+        if (imageInfo.rotate) {
+            const endRotation = startRotation + (360 * rotations);
+            floater.style.animation = `fly-rotate ${duration}s linear forwards`;
+            floater.style.setProperty('--start-rotation', `${startRotation}deg`);
+            floater.style.setProperty('--end-rotation', `${endRotation}deg`);
+        } else {
+            floater.style.animation = `fly-straight ${duration}s linear forwards`;
+        }
+        
         floater.style.right = '-100px';
         floater.style.top = `${startY}%`;
 
         const img = document.createElement('img');
-        img.src = gifUrl;
-        img.style.opacity = '0.6'; // Make images slightly transparent
+        img.src = imageInfo.src;
         floater.appendChild(img);
-
+        
         container.appendChild(floater);
-
+        
         setTimeout(() => {
             floater.remove();
         }, duration * 1000);
     }
-
-    // Create fewer initial floaters (3 instead of 15)
+    
+    // Create initial floaters
     for (let i = 0; i < 3; i++) {
-        // More time between each creation (500ms instead of 200ms)
         setTimeout(() => createFloater(), i * 500);
     }
-
-    // Keep fewer maximum floaters (5 instead of 20)
-    // Create new ones less frequently (every 2 seconds instead of 1)
+    
     setInterval(() => {
         if (container.children.length < 5) {
             createFloater();

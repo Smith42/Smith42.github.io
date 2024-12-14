@@ -346,7 +346,6 @@ footer {
     position: absolute;
     width: 100px;
     height: 100px;
-    animation: fly var(--duration) linear forwards;
 }
 
 .floater img {
@@ -355,11 +354,20 @@ footer {
     object-fit: contain;
 }
 
-@keyframes fly {
+@keyframes fly-rotate {
     from {
-        transform: translate(0, 0) rotate(-10deg); /* Reduced rotation angle */
+        transform: translate(0, 0) rotate(var(--start-rotation));
     }
     to {
-        transform: translate(-120vw, 30vh) rotate(-10deg); /* Less vertical movement */
+        transform: translate(-120vw, 30vh) rotate(var(--end-rotation));
+    }
+}
+
+@keyframes fly-straight {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-120vw, 30vh);
     }
 }
