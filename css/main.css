@@ -301,6 +301,8 @@ footer {
 }
 
 .footer-gifs {
+    width: 100%;
+    overflow: hidden;
     display: flex;
     gap: 2rem;
     justify-content: center;
@@ -314,6 +316,15 @@ footer {
     .footer-gifs {
         gap: 1rem;
     }
+}
+
+#float-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    height: 200%;
 }
 
 .floater {
