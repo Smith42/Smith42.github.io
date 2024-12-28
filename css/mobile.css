@@ -67,3 +67,24 @@
     }
     
 }
+@media screen and (max-width: 50rem) {
+    #title {
+        font-size: 6vw;  /* Reduced from 8vw */
+    }
+
+    .mainLink, .mainLinkTop {
+        font-size: 1.25rem;  /* Reduced from 1.5rem */
+    }
+
+    .proj h1 {
+        font-size: 2rem;  /* Reduced from 3rem */
+    }
+
+    .pCont {
+        font-size: 1.25rem;  /* Reduced from 1.5rem */
+    }
+
+    #ban1, #ban2 {
+        font-size: 1.5rem;  /* Reduced from 2rem */
+    }
+}
