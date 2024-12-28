@@ -309,13 +309,9 @@ footer {
 }
 
 .footer-gif {
-    border-radius: 8px;
-}
-
-@media screen and (max-width: 600px) {
-    .footer-gifs {
-        gap: 1rem;
-    }
+    height: 6vw;
+    min-height: 16px; /* Won't get smaller than this */
+    max-height: 32px; /* Won't get smaller than this */
 }
 
 #float-container {
