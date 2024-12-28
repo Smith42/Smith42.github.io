@@ -338,17 +338,94 @@ footer {
 @keyframes fly-rotate {
     from {
         transform: translate(0, 0) rotate(var(--start-rotation));
+        opacity: 1;
     }
     to {
         transform: translate(-120vw, 30vh) rotate(var(--end-rotation));
+        opacity: 0;
     }
 }
 
 @keyframes fly-straight {
     from {
         transform: translate(0, 0);
+        opacity: 1;
     }
     to {
         transform: translate(-120vw, 30vh);
+        opacity: 0;
     }
+}
+
+.konami-floater {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: konami-float 10s linear forwards;
+}
+
+@keyframes konami-float {
+    0% {
+        transform: translate(0, -100%) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50vw, 100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes konamiFlash {
+    0% { color: #77ff77; }
+    20% { color: #ff6961; }
+    40% { color: #fc107f; }
+    60% { color: #02897e; }
+    80% { color: aqua; }
+    100% { color: white; }
+}
+
+.doom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-image: url('../img/doom-bg.jpg');
+    background-repeat: repeat;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doom-message {
+    font-family: 'VCR';
+    font-size: 2.5vw;  /* Scale directly with viewport width */
+    text-align: left;
+    white-space: pre-line;
+    padding-left: 10rem;
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.doom-text-line {
+    color: #FF0000;
+    text-shadow:
+        3px 3px 0 #800000,
+        -3px -3px 0 #800000,
+        3px -3px 0 #800000,
+        -3px 3px 0 #800000;
+    font-weight: bold;
+    visibility: hidden;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.doom-char {
+    display: inline-block;
+    visibility: visible;
 }
