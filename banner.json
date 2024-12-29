@@ -1,20 +1,15 @@
-
 [
     {
         "text": "ORCID: 0000-0003-0220-5125",
         "link":"https://orcid.org/0000-0003-0220-5125"
     },
     {
-        "text":"Deep learning for your <3",
+        "text":"Deep learning for your 💚",
         "link":"#Neuralnet-MCG"
     },
     {
         "text": "'I can't believe it's not DESI!'",
         "link":"#AstroDDPM"
-    },
-    {
-        "text": "Github: smith42",
-        "link":"https://github.com/smith42"
     },
     {
         "text":"Teaching SAGAN to hallucinate astronomy",
@@ -25,11 +20,11 @@
         "link":"#Pix2Prof"
     },
     {
-        "text":"Check out my CV",
-        "link":"reports/smith_mike.pdf"
+        "text":"Secrets await",
+        "link":"#degreelessness"
     },
     {
-        "text":"Secrets await",
-        "link":"#SAGAN"
+        "text":"A foundation model for astronomy",
+        "link":"#AstroPT"
     }
 ]
