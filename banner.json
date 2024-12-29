@@ -27,5 +27,9 @@
     {
         "text":"Check out my CV",
         "link":"reports/smith_mike.pdf"
+    },
+    {
+        "text":"Secrets await",
+        "link":"#SAGAN"
     }
 ]

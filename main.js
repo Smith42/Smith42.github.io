@@ -7,6 +7,18 @@ async function start(){
     let ban = await banData.json();
     let projData = await fetch("/project.json");
     let proj = await projData.json();
+
+    // Create audio element for secret click
+    const secretSound = new Audio('fun/imp.mp3');
+    
+    // Add click listener to catch all banner clicks
+    document.addEventListener('click', (e) => {
+        if (e.target.textContent === "Secrets await") {
+            e.preventDefault();
+            secretSound.cloneNode().play();
+        }
+    });
+
     document.querySelector("#arrowCont").addEventListener("click",scrollDn);
 
     banner(ban);
