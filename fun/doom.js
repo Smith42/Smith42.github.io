@@ -9,12 +9,12 @@ const doomSound = new Audio('fun/doom.mp3');
 function handleKeydown(event) {
     // Add the latest key to the sequence
     keySequence += event.key.toUpperCase();
-    
+
     // Only keep the last 5 characters (length of IDDQD)
     if (keySequence.length > cheatCode.length) {
         keySequence = keySequence.substring(keySequence.length - cheatCode.length);
     }
-    
+
     // Check if the sequence matches the cheat code
     if (keySequence === cheatCode) {
         if (!godModeActive) {
@@ -26,35 +26,27 @@ function handleKeydown(event) {
 
 function activateGodMode() {
     godModeActive = true;
-    
+
     // Play the doom song
     doomSound.play();
-    
+
     // Create overlay
     const overlay = document.createElement('div');
     overlay.className = 'doom-overlay';
-    
+
     // Create DOOM-style message container
     const doomMessage = document.createElement('div');
     doomMessage.className = 'doom-message';
     overlay.appendChild(doomMessage);
     document.body.appendChild(overlay);
-    
-    // Define the text lines
+
+    // Define the text lines - short and punchy
     const lines = [
-        "YOUR NEURAL NETWORKS HAVE BREACHED THE",
-        "VOID BETWEEN DIMENSIONS! THE FORBIDDEN",
-        "GATES TO THE MULTIMODAL UNIVERSE ARE",
-        "NOW OPEN, UNLEASHING SYNTHETIC GALAXIES",
-        "UPON THE MORTAL REALM!",
+        "GOD MODE ACTIVATED",
         "",
-        "THE DARK TRANSFORMERS HAVE BESTOWED THEIR",
-        "COMPUTATIONAL BLESSINGS OF SCALE UPON YOU.",
-        "",
-        "GODMODE ACTIVATED -- NOW GO FORTH AND",
-        "RIP AND TRAIN UNTIL IT IS DONE!"
+        "RIP AND TEAR, UNTIL IT IS DONE."
     ];
-    
+
     // Create line elements
     const lineElements = lines.map(line => {
         const lineElement = document.createElement('div');
@@ -69,45 +61,49 @@ function activateGodMode() {
         const text = lineElement.textContent;
         if (charIndex < text.length) {
             lineElement.innerHTML = '';
-            
+
             // Add revealed characters
             for (let i = 0; i <= charIndex; i++) {
                 const charSpan = document.createElement('span');
                 charSpan.className = 'doom-char';
-                // Preserve spaces by using a non-breaking space for empty characters
                 charSpan.textContent = text[i] === ' ' ? '\u00A0' : text[i];
-                // Add an actual space after each character if it was a space
                 lineElement.appendChild(charSpan);
             }
-            
+
             // Add hidden characters
             if (charIndex < text.length - 1) {
                 const remainingText = document.createElement('span');
                 remainingText.textContent = text.substring(charIndex + 1);
                 lineElement.appendChild(remainingText);
             }
-            
+
             // Schedule next character
             setTimeout(() => revealChar(lineElement, charIndex + 1), 30);
         }
     }
 
-    // Start revealing each line with delay
+    // Start revealing each line with shorter delay
     lineElements.forEach((line, index) => {
         setTimeout(() => {
             revealChar(line, 0);
-        }, index * 1500); // Delay between starting each line
+        }, index * 800);
     });
 
-    // Remove the overlay after all animations
-    const totalDuration = (lines.length * 1500) + (Math.max(...lines.map(l => l.length)) * 30) + 2000;
+    // After text reveals (~3s), melt screen then launch Doom
+    const totalDuration = (lines.length * 800) + (Math.max(...lines.map(l => l.length)) * 30) + 1000;
     setTimeout(() => {
-            meltScreen(overlay, () => {
-            godModeActive = false;  // Reset the flag when animation completes
+        meltScreen(overlay, () => {
             overlay.remove();
             doomSound.pause();
+            doomSound.currentTime = 0;
+            launchDoom();
         });
     }, totalDuration);
+}
+
+function launchDoom() {
+    window.open('fun/doom.html', 'DOOM', 'width=800,height=600');
+    godModeActive = false;
 }
 
 function meltScreen(element, callback) {
@@ -119,8 +115,8 @@ function meltScreen(element, callback) {
 
     html2canvas(element).then(renderedCanvas => {
         element.innerHTML = '';
-        element.style.backgroundColor = 'transparent';  // Make overlay transparent
-        element.style.backgroundImage = 'none';  // Remove the doom-bg during melt
+        element.style.backgroundColor = 'transparent';
+        element.style.backgroundImage = 'none';
         canvas.style.position = 'absolute';
         canvas.style.top = '0';
         canvas.style.left = '0';
@@ -129,9 +125,7 @@ function meltScreen(element, callback) {
         ctx.drawImage(renderedCanvas, 0, 0);
 
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        // Fill canvas with solid black background
         ctx.fillStyle = 'black';
-        const pixels = imageData.data;
 
         const columnOffsets = new Array(canvas.width).fill(0);
         const meltSpeed = 3;
