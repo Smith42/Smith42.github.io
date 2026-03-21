@@ -129,43 +129,18 @@ function banner(ban) {
     innerRight2.id = "innerRight2";
     innerRight2.classList = "inner-vertical";
 
-    //top p
-    let pt1 = document.createElement("a");
-    let pt2 = document.createElement("a");
-    let pt3 = document.createElement("a");
-    let pt4 = document.createElement("a");
-    let pt5 = document.createElement("a");
-    let pt6 = document.createElement("a");
-    //bottom p
-    let pb1 = document.createElement("a");
-    let pb2 = document.createElement("a");
-    let pb3 = document.createElement("a");
-    let pb4 = document.createElement("a");
-    let pb5 = document.createElement("a");
-    let pb6 = document.createElement("a");
-    //list of p
-    let p = [pt1, pt2, pt3, pt4, pt5, pt6, pb1, pb2, pb3, pb4, pb5, pb6];
-    let top = [pt1, pt2, pt3, pt4, pt5, pt6];
-    let bottom = [pb1, pb2, pb3, pb4, pb5, pb6];
     let privRand = 0;
 
-    //add attribute to every p
-    for (item of p) {
-        item.classList.add("move");
-    }
-
     //append top to top banner
-    let num = 0;
-    for (item of top) {
+    for (let num = 0; num < ban.length; num++) {
+        let item = document.createElement("a");
+        item.classList.add("move");
         // Random colour gen
-        rand = Math.floor(Math.random() * colour.length);
+        let rand = Math.floor(Math.random() * colour.length);
         if (rand == privRand && rand == 0) {
             rand += 1;
         } else if (rand == privRand) {
             rand -= 1;
-        }
-        if (num == top.length - 1 && colour[rand] == top[0].style.colour) {
-            rand > 0 ? rand = rand - 1 : rand = rand + 1;
         }
         privRand = rand;
         // text content gen
@@ -177,35 +152,36 @@ function banner(ban) {
         let clone = item.cloneNode(true);
         inner11.appendChild(item);
         inner12.appendChild(clone);
-        cont1.appendChild(inner11);
-        cont1.appendChild(inner12);
-        num += 1;
     }
+    cont1.appendChild(inner11);
+    cont1.appendChild(inner12);
 
-    num = ban.length - 1;
-    //append bottom to bottom banner
-    for (item of bottom) {
-        rand = Math.floor(Math.random() * colour.length);
+    //append bottom to bottom banner (reverse order)
+    for (let num = ban.length - 1; num >= 0; num--) {
+        let item = document.createElement("a");
+        item.classList.add("move");
+        let rand = Math.floor(Math.random() * colour.length);
         if (rand == privRand && rand == 0) {
             rand += 1;
         } else if (rand == privRand) {
             rand -= 1;
         }
-        if (num == bottom.length - 1 && colour[rand] == bottom[0].style.colour) {
-            rand > 0 ? rand = rand - 1 : rand = rand + 1;
-        }
+        privRand = rand;
         item.textContent = ban[num].text;
         item.href = ban[num].link;
-
-        privRand = rand;
         item.style.color = colour[rand];
         item.style.colour = colour[rand];
         let clone = item.cloneNode(true);
         inner21.appendChild(item);
         inner22.appendChild(clone);
-        cont2.appendChild(inner21);
-        cont2.appendChild(inner22);
-        num -= 1;
+    }
+    cont2.appendChild(inner21);
+    cont2.appendChild(inner22);
+
+    // Helper to wrap emojis in counter-rotating spans for vertical banners
+    function fixVerticalEmojis(text) {
+        return text.replace(/([\u{1F300}-\u{1F9FF}\u{2600}-\u{2B55}\u{200D}\u{FE0F}]+)/gu,
+            '<span class="emoji-fix">$1</span>');
     }
 
     // Left vertical banner
@@ -221,7 +197,7 @@ function banner(ban) {
         privRand = rand;
 
         let link = document.createElement("a");
-        link.textContent = item.text;
+        link.innerHTML = fixVerticalEmojis(item.text);
         link.href = item.link;
         link.style.color = colour[rand];
 
@@ -244,7 +220,7 @@ function banner(ban) {
         privRand = rand;
 
         let link = document.createElement("a");
-        link.textContent = item.text;
+        link.innerHTML = fixVerticalEmojis(item.text);
         link.href = item.link;
         link.style.color = colour[rand];
 

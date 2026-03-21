@@ -21,36 +21,36 @@ html {
     height: 2.5rem;
     line-height: 2.5rem;
     font-size: clamp(1rem, 4vw, 2.5rem);
-    position: fixed;    
+    position: fixed;
 }
 
 .inner {
     min-width: 100%;
     overflow: hidden;
-    position: relative;
     display: inline-grid;
-    grid-template-columns: repeat(6, auto);
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
     position: absolute;
     margin: 0;
     text-align: center;
     -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);	
+    -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
-    -moz-animation: scroll 180s linear infinite;
-    -webkit-animation: scroll 180s linear infinite;
-    animation: scroll 180s linear infinite;
+    -moz-animation: scroll 300s linear infinite;
+    -webkit-animation: scroll 300s linear infinite;
+    animation: scroll 300s linear infinite;
 }
 
 #inner11, #inner21 {
-    animation-delay: -90s;
+    animation-delay: -150s;
 }
 
 #inner11 a, #inner12 a, #inner21 a, #inner22 a {
     display: block;
     margin: 0 .25rem;
     min-width: max-content;
-    width: 100%;
     white-space: nowrap;
+    font-size: clamp(0.8rem, 3vw, 2rem);
 }
 
 #inner12, #inner22 {
@@ -82,15 +82,16 @@ html {
     min-height: 100%;
     position: absolute;
     display: inline-grid;
-    grid-template-rows: repeat(6, auto);
+    grid-auto-flow: row;
+    grid-auto-rows: max-content;
     transform: translateY(-100%);
-    animation: scrollVertical 180s linear infinite;
+    animation: scrollVertical 300s linear infinite;
     margin: 0;
     text-align: center;
 }
 
 #innerLeft1, #innerRight1 {
-    animation-delay: -90s;
+    animation-delay: -150s;
 }
 
 .inner-vertical a {
@@ -98,10 +99,22 @@ html {
     margin: 0.25rem 0;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    transform: rotate(180deg);
     min-height: max-content;
-    height: 100%;
     white-space: nowrap;
+    font-size: clamp(0.8rem, 3vw, 2rem);
+}
+
+/* Left banner: rotate so text reads bottom-to-top, facing center */
+#banLeft .inner-vertical a {
+    transform: rotate(180deg);
+}
+
+/* Right banner: no rotation, vertical-rl naturally faces center */
+
+/* Counter-rotate emojis in left banner so they're upright */
+#banLeft .inner-vertical a .emoji-fix {
+    display: inline-block;
+    transform: rotate(180deg);
 }
 
 /* Animations */
@@ -116,25 +129,25 @@ html {
 }
 
 @keyframes scroll {
-    0%   { 
+    0%   {
         -moz-transform: translateX(100%);
         -webkit-transform: translateX(100%);
-        transform: translateX(100%); 		
+        transform: translateX(100%);
     }
-    100% { 
+    100% {
         -moz-transform: translateX(-100%);
         -webkit-transform: translateX(-100%);
-        transform: translateX(-100%); 
+        transform: translateX(-100%);
     }
 }
 
 @keyframes scrollVertical {
-    0% { 
+    0% {
         -moz-transform: translateY(100%);
         -webkit-transform: translateY(100%);
         transform: translateY(100%);
     }
-    100% { 
+    100% {
         -moz-transform: translateY(-100%);
         -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
@@ -144,18 +157,18 @@ html {
 /* Media Queries */
 @media screen and (max-width: 1000px) and (max-height: 1000px) {
     .inner {
-        -moz-animation: scroll 210s linear infinite;
-        -webkit-animation: scroll 210s linear infinite;
-        animation: scroll 210s linear infinite;
+        -moz-animation: scroll 350s linear infinite;
+        -webkit-animation: scroll 350s linear infinite;
+        animation: scroll 350s linear infinite;
     }
     #inner11, #inner21 {
-        animation-delay: -105s;
+        animation-delay: -175s;
     }
     .inner-vertical {
-        animation: scrollVertical 210s linear infinite;
+        animation: scrollVertical 350s linear infinite;
     }
     #innerLeft1, #innerRight1 {
-        animation-delay: -105s;
+        animation-delay: -175s;
     }
 }
 
