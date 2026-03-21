@@ -1,7 +1,7 @@
 [
     {
         "title":"About me",
-        "desc":"I'm Mike. I'm interested in applying deep learning to cross-disciplinary problems in astrophysics, earth observation, medical imaging, and other fields. My CV is <a href=reports/smith_mike.pdf>here</a>.",
+        "desc":"I'm Mike. I like building foundation models and pointing them at things -- things like galaxies, stars, the Earth, and hearts. Check out my <a href=reports/smith_mike.pdf>CV here</a>.",
         "img":"",
         "gitLink":"",
         "blogLink":"",
@@ -17,7 +17,7 @@
     },
     {
         "title":"The Multimodal Universe",
-        "desc":"A huge 100TB dataset of crossmatched multimodal astronomical data, taken from astronomy's most important telescopes and observatories. Packaged up just right for all your deep learning needs <3 .",
+        "desc":"100TB of crossmatched astronomical data from the world's most important telescopes and observatories, packaged up just right for all your deep learning needs.",
         "img":"img/viz1.gif",
         "gitLink":"https://github.com/MultimodalUniverse/MultimodalUniverse",
         "blogLink":"",
@@ -25,7 +25,7 @@
     },
     {
         "title":"AstroPT",
-        "desc":"Can we apply large observation models to astronomy? Of course we can! We find that neural scaling laws can predict how well a neural net performs on astronomically useful downstream tasks. We also suggest a FOSS approach for further developing these models.",
+        "desc":"A foundation model for astronomy. Neural scaling laws predict how well it handles downstream tasks -- and the bigger it gets, the better it gets. Open-source, obviously.",
         "img":"img/carmeme-2.png",
         "gitLink":"https://github.com/Smith42/astroPT",
         "blogLink":"",
@@ -33,7 +33,7 @@
     },
     {
         "title":"EarthPT",
-        "desc":"A Large Observation Model for Earth Observation that can accurately forecast the future. We can also extract the latent space of the model to find the most important features for downstream tasks.",
+        "desc":"A foundation model for Earth observation that can forecast the future of any location on the planet. Peek inside its latent space and it'll tell you what matters most.",
         "img":"img/3d.gif",
         "gitLink":"https://github.com/aspiaspace/EarthPT",
         "blogLink":"",
@@ -41,7 +41,7 @@
     },
     {
         "title":"Astronomia ex machina",
-        "desc":"A review on neural networks in astronomy, where we predict that enormous foundation models will play a big role in astronomy's future. The mortarboard icon points to my thesis, which this review is based off of.",
+        "desc":"A review of neural networks in astronomy, where we called the foundation model era before it was cool. Also doubles as my thesis -- hit the mortarboard for the full thing.",
         "img":"img/aem.jpg",
         "thesisLink":"reports/mikes_thesis.pdf",
         "blogLink":"",

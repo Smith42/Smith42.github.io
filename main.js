@@ -5,7 +5,7 @@ window.addEventListener("load",start);
 async function start(){
     const banData = await fetch("/banner.json");
     let ban = await banData.json();
-    let projData = await fetch("/project.json");
+    let projData = await fetch("/project.json?v=2");
     let proj = await projData.json();
 
     // Create audio element for secret click
