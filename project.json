@@ -8,6 +8,14 @@
         "pLink":""
     },
     {
+        "title":"The Platonic Universe",
+        "desc":"Do foundation models see the same sky 🧐? We point models trained on natural imagery at galaxies from major sky surveys -- and find they converge on the same representations, despite never seeing space before. The bigger the model, the more they agree.",
+        "img":"img/platonic-meme.jpg",
+        "gitLink":"https://github.com/UniverseTBD/platonic-universe",
+        "blogLink":"",
+        "pLink":"https://arxiv.org/abs/2509.19453"
+    },
+    {
         "title":"The Multimodal Universe",
         "desc":"A huge 100TB dataset of crossmatched multimodal astronomical data, taken from astronomy's most important telescopes and observatories. Packaged up just right for all your deep learning needs <3 .",
         "img":"img/viz1.gif",
@@ -41,7 +49,7 @@
     },
     {
         "title":"AstroDDPM",
-        "desc":"A denoising diffusion probabilistic model can synthesise galaxies that are qualitatively and physically indistinguishable from the real thing. They can also remove satellite trails, and 'galaxify' images. <a href='thisisnotagalaxy' style='color:#ffff00'>Click here</a> to cycle through some fake galaxies.",
+        "desc":"Diffusion models can dream up galaxies that are indistinguishable from the real thing -- physically and visually. They can also zap satellite trails and 'galaxify' any image. <a href='thisisnotagalaxy' style='color:#ffff00'>Click here</a> to cycle through some fake galaxies.",
         "img":"img/galaxies.gif",
         "gitLink":"https://github.com/Smith42/astroddpm",
         "blogLink":"",
@@ -49,7 +57,7 @@
     },
     {
         "title":"Pix2Prof",
-        "desc":"Language models can be applied to astronomy! A ResNet-18 => Gated Recurrent Unit (GRU) encoder--decoder model is used to accurately 'caption' galaxy images with light profile data.",
+        "desc":"What if we captioned galaxies like images? An encoder-decoder model turns galaxy photos into light profile data -- basically teaching a neural net to describe what it sees in the language of astrophysics.",
         "img":"img/p2p_simple.png",
         "gitLink":"https://github.com/Smith42/pix2prof",
         "blogLink":"",
@@ -58,7 +66,7 @@
     },
     {
         "title":"SAGAN",
-        "desc":"A spatial generative adversarial network model can generate synthetic astronomical 'observations' that are statistically indistinguishable from the real thing. We can use the same model to generate ridiculous amounts of data, like a <a href='http://star.herts.ac.uk/~jgeach/gdf.html' style='color:#F72119'><i><b>7.8 billion</b></i> pixel synthetic observation</a>.",
+        "desc":"A GAN that generates fake astronomical observations so good they fool statisticians. We pushed it to its limits and generated a <a href='http://star.herts.ac.uk/~jgeach/gdf.html' style='color:#F72119'><i><b>7.8 billion</b></i> pixel synthetic observation</a> of deep space.",
         "img":"img/spaceInOut2.gif",
         "gitLink":"https://github.com/Smith42/XDF-GAN",
         "blogLink":"",
@@ -66,7 +74,7 @@
     },
     {
         "title":"Neuralnet-MCG",
-        "desc":"A convolutional neural net (CNN) can successfully diagnose heart attack symptoms in ECG scans. A 3D CNN can also successfully diagnose heart attacks in a magnetocardiogram (MCG) video.  We correctly find that the ST section of an ECG/MCG is the most diagnostic part for detecting myocardial infarctions!",
+        "desc":"CNNs that diagnose heart attacks from ECG scans and 3D magnetocardiogram video. The model correctly learns that the ST segment is the smoking gun for myocardial infarctions -- no cardiologist needed to tell it that.",
         "img":"img/3D-Data-Example.gif",
         "gitLink":"https://github.com/Smith42/neuralnet-mcg",
         "blogLink":"",
@@ -74,7 +82,7 @@
     },
     {
         "title":"Heart-CNN",
-        "desc":"A 3D siamese CNN finds dead cells in heart tomography scans.",
+        "desc":"A 3D siamese CNN that spots dead cells in heart tomography scans. Point it at a heart, it finds the damage.",
         "img":"img/mapping.png",
         "gitLink":"https://github.com/Smith42/heart-cnn",
         "blogLink":"",

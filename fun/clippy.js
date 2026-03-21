@@ -10,7 +10,9 @@
         "I'm not saying this is the best website ever, but... it is.",
         "Pro tip: email Mike. I'm a paperclip and even I know that.",
         "Hmm, you've been here a while. Everything okay?",
-        "I see you're using a web browser. Excellent choice!"
+        "I see you're using a web browser. Excellent choice!",
+        "Feeling nostalgic? Type BREAKOUT for a surprise game.",
+        "Birds aren't real, but FLAPPY ones are. Try typing it."
     ];
 
     let dismissCount = 0;
@@ -86,6 +88,9 @@
         setTimeout(showBubble, 800);
     }
 
-    // Pop up after 10 seconds on the page
-    setTimeout(createClippy, 10000);
+    // Pop up after 10 seconds on the page (if no game is active)
+    setTimeout(function() {
+        if (window._breakoutActive) return;
+        createClippy();
+    }, 10000);
 })();
