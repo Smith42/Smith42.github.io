@@ -93,5 +93,5 @@
     setTimeout(function() {
         if (window._breakoutActive) return;
         createClippy();
-    }, 10000);
+    }, 60000);
 })();
