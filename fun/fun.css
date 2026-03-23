@@ -181,18 +181,7 @@
 
 /* Secrets counter */
 #secrets-counter {
-    position: fixed;
-    bottom: 12px;
-    right: 12px;
-    font-family: Pixel, monospace;
-    font-size: 14px;
-    color: #02897e;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 4px 10px;
-    border: 1px solid #02897e;
-    z-index: 99980;
-    pointer-events: none;
-    user-select: none;
+    display: none;
 }
 
 /* Secret toast */
