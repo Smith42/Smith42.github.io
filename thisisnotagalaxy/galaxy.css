@@ -33,6 +33,20 @@ body{
 a {
     color:#AC4FC6;
 }
+.back-link {
+    position: fixed;
+    top: 1rem;
+    left: 1.5rem;
+    color: #AC4FC6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+.back-link:hover {
+    opacity: 1;
+}
 @font-face{
     font-family: Pixel;
     src:url(../font/Pixellari.ttf);

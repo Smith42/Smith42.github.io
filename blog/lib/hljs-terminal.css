@@ -1,0 +1,112 @@
+/* Terminal-themed highlight.js styles */
+.hljs {
+    background: rgba(0, 0, 0, 0.3);
+    color: #77ff77;
+    border: 1px solid #33aa33;
+    padding: 12px;
+    border-radius: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    overflow-x: auto;
+}
+
+/* Keywords, built-ins */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name {
+    color: #ffaa33;
+}
+
+/* Strings */
+.hljs-string,
+.hljs-attr,
+.hljs-template-variable,
+.hljs-addition {
+    color: #77ff77;
+}
+
+/* Comments */
+.hljs-comment,
+.hljs-quote {
+    color: #559955;
+    font-style: italic;
+}
+
+/* Numbers, literals */
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-tag {
+    color: #ff6961;
+}
+
+/* Functions, classes */
+.hljs-title,
+.hljs-section,
+.hljs-type {
+    color: #02897e;
+}
+
+/* Attributes, selectors */
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+    color: #ffaa33;
+}
+
+/* Meta, preprocessor */
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string {
+    color: #888;
+}
+
+/* Deletion */
+.hljs-deletion {
+    color: #ff6961;
+    background: rgba(255, 105, 97, 0.1);
+}
+
+/* Addition */
+.hljs-addition {
+    background: rgba(119, 255, 119, 0.1);
+}
+
+/* Emphasis */
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+/* Symbols, bullet */
+.hljs-symbol,
+.hljs-bullet {
+    color: #02897e;
+}
+
+/* Params */
+.hljs-params {
+    color: #aaffaa;
+}
+
+/* Property */
+.hljs-property {
+    color: #77ff77;
+}
+
+/* Operator */
+.hljs-operator,
+.hljs-punctuation {
+    color: #aaaaaa;
+}
+
+/* Regex */
+.hljs-regexp {
+    color: #ffaa33;
+}

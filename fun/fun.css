@@ -184,6 +184,73 @@
     display: none;
 }
 
+/* Achievement overlay */
+#achievement-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 100001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+#achievement-overlay.achievement-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+#achievement-overlay.achievement-fading {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.achievement-content {
+    text-align: center;
+    max-width: 500px;
+    padding: 40px;
+}
+.achievement-title {
+    font-family: Pixel, monospace;
+    font-size: 2.2rem;
+    color: #77ff77;
+    margin: 0 0 30px 0;
+    text-shadow: 0 0 20px rgba(119, 255, 119, 0.6);
+    animation: achievement-flash 1s ease-in-out infinite alternate;
+}
+@keyframes achievement-flash {
+    0%   { opacity: 0.7; text-shadow: 0 0 10px rgba(119, 255, 119, 0.3); }
+    100% { opacity: 1;   text-shadow: 0 0 30px rgba(119, 255, 119, 0.8); }
+}
+.achievement-list {
+    text-align: left;
+    margin: 0 auto 30px;
+}
+.achievement-secret {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #33aa33;
+    font-family: Pixel, monospace;
+    font-size: 0.9rem;
+}
+.achievement-secret-name {
+    color: #ffaa33;
+}
+.achievement-secret-trigger {
+    color: #559955;
+    font-size: 0.8rem;
+}
+.achievement-subtitle {
+    font-family: Pixel, monospace;
+    color: #02897e;
+    font-size: 1rem;
+    margin: 0;
+}
+
 /* Secret toast */
 #secret-toast {
     position: fixed;

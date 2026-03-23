@@ -5,7 +5,7 @@ window.addEventListener("load",start);
 async function start(){
     const banData = await fetch("/banner.json");
     let ban = await banData.json();
-    let projData = await fetch("/project.json?v=2");
+    let projData = await fetch("/project.json?v=3");
     let proj = await projData.json();
 
     // Create audio element for secret click
@@ -24,8 +24,8 @@ async function start(){
     document.querySelector("#arrowCont").addEventListener("click",scrollDn);
 
     banner(ban);
-    project(proj);  
-    initFloaters();
+    project(proj);
+    setTimeout(initFloaters, 20000);
 }
 
 function initFloaters() {

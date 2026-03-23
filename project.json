@@ -49,7 +49,7 @@
     },
     {
         "title":"AstroDDPM",
-        "desc":"Diffusion models can dream up galaxies that are indistinguishable from the real thing -- physically and visually. They can also zap satellite trails and 'galaxify' any image. <a href='thisisnotagalaxy' style='color:#ffff00'>Click here</a> to cycle through some fake galaxies.",
+        "desc":"Diffusion models can dream up galaxies that are indistinguishable from the real thing -- physically and visually. They can also zap satellite trails and 'galaxify' any image. <a href='thisisnotagalaxy' style='color:#ffff00'>Click here</a> to cycle through some fake galaxies, or <a href='thisisnotanapod' style='color:#ffff00'>here</a> for fake APODs.",
         "img":"img/galaxies.gif",
         "gitLink":"https://github.com/Smith42/astroddpm",
         "blogLink":"",

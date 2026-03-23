@@ -24,6 +24,19 @@
     let blogPosts = [];
     let selectedIdx = -1;
 
+    // Configure marked with highlight.js for syntax highlighting
+    marked.setOptions({
+        highlight: function(code, lang) {
+            if (typeof hljs !== 'undefined') {
+                if (lang && hljs.getLanguage(lang)) {
+                    return hljs.highlight(code, {language: lang}).value;
+                }
+                return hljs.highlightAuto(code).value;
+            }
+            return code;
+        }
+    });
+
     document.addEventListener('DOMContentLoaded', init);
     document.addEventListener('keydown', handleKeyboard);
 

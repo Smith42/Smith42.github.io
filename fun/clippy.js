@@ -1,30 +1,93 @@
-// Clippy assistant
+// Clippy assistant — secrets-aware
 (function() {
-    const tips = [
+    // Hint tips — only shown if that secret is NOT yet found
+    var hints = {
+        konami: "I know a cheat code but I'm not supposed to tell you. It starts with up.",
+        iddqd: "I see you've been scrolling. Need a break? Try typing IDDQD.",
+        crt: "Did you know? The meaning of life is 42. Also, try typing CRT.",
+        breakout: "Type BREAKOUT. I'll wait. I'm a paperclip, I've got nothing but time.",
+        flappy: "Birds aren't real, but FLAPPY ones are. Try typing it.",
+        secrets_await: "That banner up there is more clickable than it looks."
+    };
+
+    // Reaction tips — only shown if that secret IS found
+    var reactions = {
+        konami: "Konami code. You and every other '90s kid.",
+        iddqd: "God Mode. Somewhere, John Carmack felt a disturbance.",
+        crt: "CRT mode. Your eyeballs must be thrilled.",
+        flappy: "A flappy shoggoth. The eldritch horrors just keep getting more casual."
+    };
+
+    // General tips — always available
+    var general = [
         "It looks like you're reading a CV. Would you like me to hire this person?",
-        "I see you've been scrolling. Need a break? Try typing IDDQD.",
-        "Fun fact: this website has secrets. Try the Konami code!",
         "It looks like you're stalking someone's GitHub. Need help?",
-        "Did you know? The meaning of life is 42. Also, try typing CRT.",
-        "You seem lost. Have you tried turning it off and on again?",
-        "I'm not saying this is the best website ever, but... it is.",
-        "Pro tip: email Mike. I'm a paperclip and even I know that.",
-        "Hmm, you've been here a while. Everything okay?",
-        "I see you're using a web browser. Excellent choice!",
-        "Feeling nostalgic? Type BREAKOUT for a surprise game.",
-        "Birds aren't real, but FLAPPY ones are. Try typing it.",
-        "Psst... try accessing the /blog/ terminal. If you can hack it."
+        "You seem lost. That's okay. I live here and I'm also lost.",
+        "You've been here a while. Not judging. Okay, slightly judging.",
+        "You're using a web browser. Bold move in $CURRENT_YEAR.",
+        "There's a /blog/ terminal. It has a password. I'm not helping.",
+        "The paperclip maximizer is a thought experiment about an AI that turns everything into paperclips. I'm not saying it worked, but here I am.",
+        "I'm a paperclip on a website. The shoggoth made me. I don't ask questions and neither should you.",
+        "They said 'what if an AI just made paperclips forever' like it was a warning. I call it a origin story.",
+        "People worry about the paperclip maximizer. I worry about job security. We are not the same.",
+        "I am the final output of a superintelligent AI. I know. I'm also disappointed."
     ];
 
-    let dismissCount = 0;
-    let usedTips = [];
+    // Completionist tips — all 6 secrets found
+    var completionist = [
+        "You found everything. I'm genuinely unsure what to say.",
+        "All secrets found. I'm unemployed now.",
+        "100% completion. You check behind waterfalls in games, don't you?",
+        "That's all of them. We should both go touch grass."
+    ];
+
+    var dismissCount = 0;
+    var usedTips = [];
+
+    function getFoundSecrets() {
+        try {
+            return JSON.parse(localStorage.getItem('secrets-found') || '{}');
+        } catch(e) {
+            return {};
+        }
+    }
 
     function getRandomTip() {
-        if (usedTips.length >= tips.length) usedTips = [];
-        let tip;
+        var found = getFoundSecrets();
+        var count = Object.keys(found).length;
+        var pool = [];
+
+        if (count >= 6) {
+            // All secrets found — use completionist + general
+            pool = pool.concat(completionist);
+            pool = pool.concat(general);
+        } else {
+            // Add hints for undiscovered secrets
+            var secretKeys = Object.keys(hints);
+            for (var i = 0; i < secretKeys.length; i++) {
+                if (!found[secretKeys[i]]) {
+                    pool.push(hints[secretKeys[i]]);
+                }
+            }
+            // Add reactions for discovered secrets
+            var reactionKeys = Object.keys(reactions);
+            for (var i = 0; i < reactionKeys.length; i++) {
+                if (found[reactionKeys[i]]) {
+                    pool.push(reactions[reactionKeys[i]]);
+                }
+            }
+            // Always add general tips
+            pool = pool.concat(general);
+        }
+
+        // Avoid repeats
+        if (usedTips.length >= pool.length) usedTips = [];
+        var tip;
+        var tries = 0;
         do {
-            tip = tips[Math.floor(Math.random() * tips.length)];
-        } while (usedTips.includes(tip));
+            tip = pool[Math.floor(Math.random() * pool.length)];
+            tries++;
+        } while (usedTips.includes(tip) && tries < 50);
         usedTips.push(tip);
         return tip;
     }
@@ -89,7 +152,7 @@
         setTimeout(showBubble, 800);
     }
 
-    // Pop up after 10 seconds on the page (if no game is active)
+    // Pop up after 60 seconds on the page (if no game is active)
     setTimeout(function() {
         if (window._breakoutActive) return;
         createClippy();

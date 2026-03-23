@@ -4,11 +4,17 @@ window.addEventListener('load', function() {
     const chars = ['✦', '✧', '⭑', '·'];
     const container = document.createElement('div');
     container.id = 'cursor-trail-container';
-    document.body.appendChild(container);
 
     let lastSpawn = 0;
+    let trailActive = false;
+
+    setTimeout(function() {
+        document.body.appendChild(container);
+        trailActive = true;
+    }, 20000);
 
     document.addEventListener('mousemove', function(e) {
+        if (!trailActive) return;
         const now = Date.now();
         if (now - lastSpawn < 30) return;
         lastSpawn = now;
