@@ -27,16 +27,12 @@
         "You're using a web browser. Bold move in $CURRENT_YEAR.",
         "There's a /blog/ terminal. It has a password. I'm not helping.",
         "The paperclip maximizer is a thought experiment about an AI that turns everything into paperclips. I'm not saying it worked, but here I am.",
-        "I'm a paperclip on a website. The shoggoth made me. I don't ask questions and neither should you.",
-        "They said 'what if an AI just made paperclips forever' like it was a warning. I call it a origin story.",
-        "People worry about the paperclip maximizer. I worry about job security. We are not the same.",
-        "I am the final output of a superintelligent AI. I know. I'm also disappointed."
     ];
 
     // Completionist tips — all 6 secrets found
     var completionist = [
         "You found everything. I'm genuinely unsure what to say.",
-        "All secrets found. I'm unemployed now.",
+        "All secrets found. I'm unemployed now :( .",
         "100% completion. You check behind waterfalls in games, don't you?",
         "That's all of them. We should both go touch grass."
     ];
