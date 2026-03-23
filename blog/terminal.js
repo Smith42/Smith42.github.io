@@ -536,6 +536,13 @@
             (secretCount >= 6 ? '  [ALL SECRETS DISCOVERED]' : '') + '\n';
         menuBlock.appendChild(secretLine);
 
+        var rssLink = document.createElement('a');
+        rssLink.className = 'menu-entry';
+        rssLink.href = '/blog/feed.xml';
+        rssLink.textContent = '> RSS FEED';
+        menuBlock.appendChild(rssLink);
+        menuBlock.appendChild(document.createTextNode('\n'));
+
         var backLink = document.createElement('a');
         backLink.className = 'menu-entry';
         backLink.href = '/';
