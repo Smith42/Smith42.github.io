@@ -13,9 +13,11 @@ async function start(){
     
     // Add click listener to catch all banner clicks
     document.addEventListener('click', (e) => {
-        if (e.target.textContent === "Secrets await") {
+        const link = e.target.closest('a');
+        if (link && link.textContent.includes("Secrets await")) {
             e.preventDefault();
             secretSound.cloneNode().play();
+            window.SecretTracker.discover('secrets_await');
         }
     });
 

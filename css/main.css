@@ -71,6 +71,10 @@ body{
 #mainLinkRight{
     right:5rem;
 }
+#mainLinkBlog{
+    left:50%;
+    transform:translateX(-50%);
+}
 #arrowCont{
     cursor:pointer;
     font-size: 2rem;

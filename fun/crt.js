@@ -11,6 +11,7 @@
         }
         if (seq === code) {
             seq = '';
+            window.SecretTracker.discover('crt');
             toggleCRT();
         }
     });

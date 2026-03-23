@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Michael J. Smith - Terminal Blog</title>
+    <link>https://mjjsmith.com/blog/</link>
+    <description>Blog posts from mjjsmith.com</description>
+    <language>en-us</language>
+    <atom:link href="https://mjjsmith.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Hello, World!</title>
+      <link>https://mjjsmith.com/blog/#hello-world</link>
+      <guid>https://mjjsmith.com/blog/#hello-world</guid>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Welcome! I will be filling out this blog with random thoughts I have. Coolest recent thing I have been trying is vibecoding with Claude.</description>
+    </item>
+  </channel>
+</rss>

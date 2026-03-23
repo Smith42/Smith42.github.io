@@ -179,6 +179,45 @@
     100% { opacity: 0.95; }
 }
 
+/* Secrets counter */
+#secrets-counter {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    font-family: Pixel, monospace;
+    font-size: 14px;
+    color: #02897e;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4px 10px;
+    border: 1px solid #02897e;
+    z-index: 99980;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Secret toast */
+#secret-toast {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    font-family: Pixel, monospace;
+    font-size: 18px;
+    color: #77ff77;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 8px 20px;
+    border: 1px solid #77ff77;
+    z-index: 100000;
+    opacity: 0;
+    transition: opacity 0.4s, transform 0.4s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+#secret-toast.secret-toast-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 /* Clippy */
 #clippy {
     position: fixed;

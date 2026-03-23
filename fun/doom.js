@@ -25,6 +25,7 @@ function handleKeydown(event) {
 }
 
 function activateGodMode() {
+    window.SecretTracker.discover('iddqd');
     godModeActive = true;
 
     // Play the doom song

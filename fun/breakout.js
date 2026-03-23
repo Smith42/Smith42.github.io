@@ -12,6 +12,7 @@
         }
         if (seq === CODE) {
             seq = '';
+            window.SecretTracker.discover('breakout');
             startBreakout();
         }
     });

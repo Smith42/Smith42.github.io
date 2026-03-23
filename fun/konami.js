@@ -44,6 +44,7 @@ class KonamiCode {
     }
 
     triggerEasterEgg() {
+        window.SecretTracker.discover('konami');
         // Create a rain of your floating images
         const images = [
             'fun/toast.gif',

@@ -12,6 +12,7 @@
         }
         if (seq === CODE) {
             seq = '';
+            window.SecretTracker.discover('flappy');
             active = true;
             window.open('fun/floppybird/index.html', 'FLAPPY', 'width=400,height=600');
             active = false;

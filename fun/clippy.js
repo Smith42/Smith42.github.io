@@ -12,7 +12,8 @@
         "Hmm, you've been here a while. Everything okay?",
         "I see you're using a web browser. Excellent choice!",
         "Feeling nostalgic? Type BREAKOUT for a surprise game.",
-        "Birds aren't real, but FLAPPY ones are. Try typing it."
+        "Birds aren't real, but FLAPPY ones are. Try typing it.",
+        "Psst... try accessing the /blog/ terminal. If you can hack it."
     ];
 
     let dismissCount = 0;
