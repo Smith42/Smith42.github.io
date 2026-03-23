@@ -38,23 +38,28 @@
     #title{
         font-size: 8vw;
     }
-    #header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0;
+    #mainLinkLeft{
+        bottom:9rem;
+        left:3.5rem;
     }
-    .mainLink, .mainLinkTop {
-        position: static;
-        font-size: 1.3rem;
-        transform: none;
-        display: block;
-        text-align: center;
+    #mainLinkTopRight{
+        top:11rem;
+        left:3.5rem;
     }
-    #title {
-        order: -1;
-        margin-bottom: 1.5rem;
+    .mainLinkTop{
+        top:9rem;
+        font-size: 1.5rem;
+        left:3.5rem;
+    }
+    .mainLink{
+        bottom:11rem;
+        font-size: 1.5rem;
+        left:3.5rem;
+    }
+    #mainLinkBlog{
+        left:3.5rem;
+        bottom:7rem;
+        transform:none;
     }
     #arrowCont{
         font-size: 1.5rem;
