@@ -286,8 +286,17 @@
     animation: clippy-leave 1s ease-in forwards;
 }
 #clippy-body {
-    cursor: pointer;
+    cursor: grab;
 }
+#clippy.clippy-dragging {
+    animation: none !important;
+}
+#clippy.clippy-dragging #clippy-body {
+    cursor: grabbing;
+}
+#clippy.clippy-wiggle { animation: clippy-wiggle 0.6s ease-in-out; }
+#clippy.clippy-look-around { animation: clippy-look-around 1s ease-in-out; }
+#clippy.clippy-tap { animation: clippy-tap 0.8s ease-in-out; }
 #clippy-body svg {
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
@@ -354,5 +363,20 @@
 @keyframes clippy-leave {
     0%   { opacity: 1; transform: translateY(0); }
     100% { opacity: 0; transform: translateY(100px); }
+}
+@keyframes clippy-wiggle {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25%      { transform: translateY(-3px) rotate(-5deg); }
+    75%      { transform: translateY(-3px) rotate(5deg); }
+}
+@keyframes clippy-look-around {
+    0%, 100% { transform: translateY(0); }
+    30%      { transform: translateY(-2px) translateX(-3px); }
+    70%      { transform: translateY(-2px) translateX(3px); }
+}
+@keyframes clippy-tap {
+    0%, 100% { transform: translateY(0); }
+    15%, 45% { transform: translateY(-2px); }
+    30%, 60% { transform: translateY(0); }
 }
 
