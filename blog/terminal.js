@@ -39,15 +39,84 @@
 
     document.addEventListener('DOMContentLoaded', init);
     document.addEventListener('keydown', handleKeyboard);
+    window.addEventListener('hashchange', handleHashChange);
 
     function init() {
         content = document.getElementById('terminal-content');
 
-        if (localStorage.getItem('terminal-hacked')) {
+        var hashSlug = getHashSlug();
+        if (hashSlug) {
+            // Direct link to a post — skip hack, go straight to post
+            localStorage.setItem('terminal-hacked', '1');
+            loadPostBySlug(hashSlug);
+        } else if (localStorage.getItem('terminal-hacked')) {
             quickBoot();
         } else {
             bootSequence();
         }
+    }
+
+    function getHashSlug() {
+        var hash = window.location.hash;
+        if (hash && hash.length > 1) {
+            return hash.substring(1);
+        }
+        return null;
+    }
+
+    function handleHashChange() {
+        var slug = getHashSlug();
+        if (slug) {
+            loadPostBySlug(slug);
+        } else if (state === 'POST') {
+            showMenu();
+        }
+    }
+
+    function loadPostBySlug(slug) {
+        state = 'POST';
+        clearScreen();
+        content.style.overflow = 'auto';
+        content.textContent = 'Loading...';
+
+        fetchPosts(function () {
+            var post = blogPosts.find(function (p) { return p.slug === slug; });
+            if (!post) {
+                clearScreen();
+                content.textContent = 'ERROR: POST NOT FOUND\n\n';
+                var back = document.createElement('a');
+                back.className = 'menu-entry';
+                back.href = '#';
+                back.textContent = '> BACK';
+                back.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.location.hash = '';
+                    showMenu();
+                });
+                content.appendChild(back);
+                return;
+            }
+
+            fetch('posts/' + slug + '.md')
+                .then(function (r) { return r.text(); })
+                .then(function (md) {
+                    renderPost(post, md);
+                })
+                .catch(function () {
+                    clearScreen();
+                    content.textContent = 'ERROR: FILE NOT FOUND\n\n';
+                    var back = document.createElement('a');
+                    back.className = 'menu-entry';
+                    back.href = '#';
+                    back.textContent = '> BACK';
+                    back.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        window.location.hash = '';
+                        showMenu();
+                    });
+                    content.appendChild(back);
+                });
+        });
     }
 
     // --- Typewriter ---
@@ -447,6 +516,9 @@
         state = 'MENU';
         clearScreen();
         content.style.overflow = 'auto';
+        if (window.location.hash) {
+            history.replaceState(null, '', window.location.pathname);
+        }
 
         var header = 'WELCOME TO MIKECO INDUSTRIES (TM) TERMLINK\n\n';
 
@@ -563,30 +635,7 @@
     function showPost(slug) {
         return function (e) {
             e.preventDefault();
-            state = 'POST';
-            clearScreen();
-            content.style.overflow = 'auto';
-            content.textContent = 'Loading...';
-
-            fetch('posts/' + slug + '.md')
-                .then(function (r) { return r.text(); })
-                .then(function (md) {
-                    var post = blogPosts.find(function (p) { return p.slug === slug; });
-                    renderPost(post, md);
-                })
-                .catch(function () {
-                    clearScreen();
-                    content.textContent = 'ERROR: FILE NOT FOUND\n\n';
-                    var back = document.createElement('a');
-                    back.className = 'menu-entry';
-                    back.href = '#';
-                    back.textContent = '> BACK';
-                    back.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        showMenu();
-                    });
-                    content.appendChild(back);
-                });
+            window.location.hash = slug;
         };
     }
 
@@ -627,6 +676,7 @@
         back.textContent = '> BACK';
         back.addEventListener('click', function (e) {
             e.preventDefault();
+            window.location.hash = '';
             showMenu();
         });
         postEl.appendChild(back);
