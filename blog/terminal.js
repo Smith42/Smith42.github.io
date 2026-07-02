@@ -573,7 +573,7 @@
 
     function renderMenu() {
         var menuBlock = document.createElement('div');
-        menuBlock.style.whiteSpace = 'pre';
+        menuBlock.style.whiteSpace = 'pre-wrap';
 
         // Section header
         var sectionHeader = document.createElement('div');
