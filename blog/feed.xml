@@ -22,7 +22,7 @@
 
 The [Multimodal Universe](https://arxiv.org/abs/2412.02527) (MMU) pools together  80TB<sup><a id="fnref1" href="#fn1">1</a></sup> plus of data from over 30 astronomical surveys into one place. Crossmatching (linking observations of the same object across surveys) is its killer feature, but until now it required downloading hefty chunks of data to local disk. We got tired of needing a cluster just to run a crossmatch, so we gathered in the [UniverseTBD](https://discord.gg/rhBJQgSXcV) and [Hugging Science](https://discord.gg/caqxB63DPd) Discord servers to fix that. We've converted the MMU to the parquet-based [HATS](https://hats.readthedocs.io/) format so that you can use the [LSDB](https://lsdb.io/) and Hugging Face ecosystems to crossmatch from a laptop. The datasets are [in this Hugging Face collection](https://huggingface.co/collections/UniverseTBD/multimodal-universe-hats). No bulk downloads are necessary, and 4GB of RAM is enough even at Gaia scale. Here it is in action:
 
-<script src="https://asciinema.org/a/1259218.js" id="asciicast-1259218" async data-theme="monokai" data-idle-time-limit="2" controls=false terminalFontSize=small></script>
+<script src="https://asciinema.org/a/1259218.js" id="asciicast-1259218" async data-theme="asciinema" data-idle-time-limit="2"></script>
 
 That whole run ☝️ is really just this 👇:
 
