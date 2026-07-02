@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Michael J. Smith - Terminal Blog</title>
-    <link>https://www.mjjsmith.com/blog/</link>
-    <description>Blog posts from mjjsmith.com</description>
-    <language>en-us</language>
-    <atom:link href="https://www.mjjsmith.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>80TB+ of astronomy for the HDD-poor</title>
-      <link>https://www.mjjsmith.com/blog/#mmu-hats-crossmatch</link>
-      <guid>https://www.mjjsmith.com/blog/#mmu-hats-crossmatch</guid>
-      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
-      <description># 80TB+ of astronomy for the HDD-poor:&lt;br&gt;crossmatch the Multimodal Universe from your laptop</description>
-      <content:encoded><![CDATA[# 80TB+ of astronomy for the HDD-poor:<br>crossmatch the Multimodal Universe from your laptop
+# 80TB+ of astronomy for the HDD-poor:<br>crossmatch the Multimodal Universe from your laptop
 
 <p align="center">
   <img src="https://cdn-uploads.huggingface.co/production/uploads/64bfce50484eccec034222a4/xePDi3wtskYvdODKpDaug.png" width="63%">
@@ -22,7 +8,7 @@
 
 The [Multimodal Universe](https://arxiv.org/abs/2412.02527) (MMU) pools together  80TB<sup><a id="fnref1" href="#fn1">1</a></sup> plus of data from over 30 astronomical surveys into one place. Crossmatching (linking observations of the same object across surveys) is its killer feature, but until now it required downloading hefty chunks of data to local disk. We got tired of needing a cluster just to run a crossmatch, so we gathered in the [UniverseTBD](https://discord.gg/rhBJQgSXcV) and [Hugging Science](https://discord.gg/caqxB63DPd) Discord servers to fix that. We've converted the MMU to the parquet-based [HATS](https://hats.readthedocs.io/) format so that you can use the [LSDB](https://lsdb.io/) and Hugging Face ecosystems to crossmatch from a laptop. The datasets are [in this Hugging Face collection](https://huggingface.co/collections/UniverseTBD/multimodal-universe-hats). No bulk downloads are necessary, and 4GB of RAM is enough even at Gaia scale. Here it is in action:
 
-<script src="https://asciinema.org/a/1259218.js" id="asciicast-1259218" async data-theme="monokai" data-idle-time-limit="2" controls=false terminalFontSize=small></script>
+<script src="https://asciinema.org/a/1259218.js" id="asciicast-1259218" async data-theme="asciinema" data-idle-time-limit="2"></script>
 
 That whole run ☝️ is really just this 👇:
 
@@ -180,21 +166,4 @@ To Cecilia Garraffo, Rafael Martínez-Galarza, and the AstroAI group at the Harv
 ---
 
 <a id="fn1"></a>
-<sup>1</sup> The eagle-eyed reader may have noticed that MMU v1.0 boasted "100TB" of astro-data, but here we state 80TB. This is because MaNGA's zero-padded data cubes compressed _beautifully_ under HATS + Parquet + Xet. <a href="#fnref1">↩</a>]]></content:encoded>
-    </item>
-    <item>
-      <title>Hello, World!</title>
-      <link>https://www.mjjsmith.com/blog/#hello-world</link>
-      <guid>https://www.mjjsmith.com/blog/#hello-world</guid>
-      <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
-      <description>Welcome! I will be filling out this blog with random thoughts I have.</description>
-      <content:encoded><![CDATA[Welcome! I will be filling out this blog with random thoughts I have.
-
-Coolest recent thing I have been trying is vibecoding with Claude. All of this "terminal" section (and much of the minigames + secrets) of the website have been vibed. It is crazy how well this all works now.
-
-Stay tuned for more!
-
-[RSS Feed](/blog/feed.xml)]]></content:encoded>
-    </item>
-  </channel>
-</rss>
+<sup>1</sup> The eagle-eyed reader may have noticed that MMU v1.0 boasted "100TB" of astro-data, but here we state 80TB. This is because MaNGA's zero-padded data cubes compressed _beautifully_ under HATS + Parquet + Xet. <a href="#fnref1">↩</a> 

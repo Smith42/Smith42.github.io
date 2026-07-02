@@ -202,8 +202,20 @@ body {
 /* Post view */
 .post-content {
     max-width: 80ch;
+    margin: 0 auto;
     overflow-y: auto;
     white-space: pre-wrap;
+    text-align: center;
+}
+
+.post-content pre {
+    text-align: left;
+}
+
+.post-separator {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .post-content h1,
@@ -256,6 +268,22 @@ body {
     text-shadow: none;
 }
 
+/* Asciinema embed — smaller, centered, green CRT tint */
+.post-content .asciicast {
+    width: 60%;
+    margin: 1.5em auto !important;
+}
+
+.post-content iframe[id^="asciicast-"] {
+    display: block;
+    max-width: 100%;
+    line-height: 0;
+    /* ponytail: grayscale→sepia colorizes the cross-origin recording amber (sepia's
+       native hue ~35°); nudge saturate/hue-rotate if the tint drifts off #ffaa33 */
+    filter: grayscale(1) sepia(1) saturate(2.8) brightness(1.05) hue-rotate(5deg);
+    box-shadow: 0 0 24px rgba(255, 170, 51, 0.2);
+}
+
 .post-content blockquote {
     border-left: 2px solid #33ff33;
     padding-left: 15px;
@@ -271,7 +299,7 @@ body {
 
 .post-content img {
     max-width: 100%;
-    filter: grayscale(100%) brightness(0.8) sepia(100%) hue-rotate(70deg) saturate(300%);
+    filter: brightness(0.95);
 }
 
 /* Locked screen flash */
@@ -293,6 +321,10 @@ body {
     #terminal-content {
         padding: 20px;
         overflow: auto !important;
+    }
+
+    .post-content .asciicast {
+        width: 100%;
     }
 
     .hack-container {

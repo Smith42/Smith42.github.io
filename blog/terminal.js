@@ -66,11 +66,18 @@
 
     function handleHashChange() {
         var slug = getHashSlug();
-        if (slug) {
-            loadPostBySlug(slug);
-        } else if (state === 'POST') {
-            showMenu();
+        if (!slug) {
+            if (state === 'POST') showMenu();
+            return;
         }
+        // Known post slug → load the post
+        if (blogPosts.some(function (p) { return p.slug === slug; })) {
+            loadPostBySlug(slug);
+            return;
+        }
+        // Otherwise treat as in-page anchor (footnotes, etc.)
+        var target = document.getElementById(slug);
+        if (target) target.scrollIntoView({ block: 'center' });
     }
 
     function loadPostBySlug(slug) {
@@ -97,7 +104,7 @@
                 return;
             }
 
-            fetch('posts/' + slug + '.md')
+            fetch('posts/' + slug + '.md?v=' + Date.now())
                 .then(function (r) { return r.text(); })
                 .then(function (md) {
                     renderPost(post, md);
@@ -244,6 +251,21 @@
         header.textContent = 'MIKECO INDUSTRIES (TM) TERMLINK PROTOCOL\nENTER PASSWORD NOW\n\n' +
             attemptsLine() + '\n';
         content.appendChild(header);
+
+        // Skip link
+        const skip = document.createElement('a');
+        skip.className = 'menu-entry';
+        skip.href = '#';
+        skip.textContent = '> SKIP HACK';
+        skip.style.display = 'inline-block';
+        skip.style.marginBottom = '8px';
+        skip.addEventListener('click', function (e) {
+            e.preventDefault();
+            localStorage.setItem('terminal-hacked', '1');
+            showMenu();
+        });
+        content.appendChild(skip);
+        content.appendChild(document.createElement('br'));
 
         // Hack container (3-column: grid col1, grid col2, output)
         const container = document.createElement('div');
@@ -559,6 +581,11 @@
         menuBlock.appendChild(sectionHeader);
 
         // Entries
+        var dateCol = 0;
+        for (var i = 0; i < blogPosts.length; i++) {
+            var num = '  [' + (i + 1) + '] ';
+            dateCol = Math.max(dateCol, num.length + blogPosts[i].title.length + 3);
+        }
         for (var i = 0; i < blogPosts.length; i++) {
             var post = blogPosts[i];
             var entry = document.createElement('a');
@@ -570,7 +597,7 @@
             var dateParts = post.date.split('-');
             var dateStr = dateParts[1] + '.' + dateParts[2] + '.' + dateParts[0];
             // Pad title to align dates
-            var padding = Math.max(2, 42 - num.length - title.length);
+            var padding = dateCol - num.length - title.length;
             entry.textContent = num + title + ' '.repeat(padding) + dateStr;
 
             entry.addEventListener('click', showPost(post.slug));
@@ -655,7 +682,8 @@
 
         // Separator
         var sep = document.createElement('div');
-        sep.textContent = '='.repeat(50);
+        sep.className = 'post-separator';
+        sep.textContent = '='.repeat(500);
         sep.style.marginBottom = '20px';
         postEl.appendChild(sep);
 
@@ -667,7 +695,9 @@
 
         // Back link
         var sep2 = document.createElement('div');
-        sep2.textContent = '\n' + '='.repeat(50) + '\n';
+        sep2.className = 'post-separator';
+        sep2.style.margin = '20px 0';
+        sep2.textContent = '='.repeat(500);
         postEl.appendChild(sep2);
 
         var back = document.createElement('a');
@@ -689,13 +719,25 @@
 
         content.appendChild(postEl);
 
+        // innerHTML doesn't execute scripts — re-create them after attach so embeds (asciinema, etc.) load
+        var scripts = postContent.querySelectorAll('script');
+        for (var s = 0; s < scripts.length; s++) {
+            var old = scripts[s];
+            var ns = document.createElement('script');
+            for (var a = 0; a < old.attributes.length; a++) {
+                ns.setAttribute(old.attributes[a].name, old.attributes[a].value);
+            }
+            ns.textContent = old.textContent;
+            old.parentNode.replaceChild(ns, old);
+        }
+
         content.scrollTop = 0;
     }
 
     // --- Keyboard Navigation ---
     function getSelectables() {
         if (state === 'HACK') {
-            return content.querySelectorAll('.hack-word, .hack-bracket');
+            return content.querySelectorAll('.hack-word, .hack-bracket, .menu-entry');
         }
         if (state === 'MENU' || state === 'POST') {
             return content.querySelectorAll('.menu-entry');
