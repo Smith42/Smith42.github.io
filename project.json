@@ -24,6 +24,14 @@
         "pLink":"https://arxiv.org/abs/2412.02527"
     },
     {
+        "title":"MMU x HATS",
+        "desc":"The MMU's killer feature (crossmatching) needed you to download a hefty amount of data. This is obviously not great if you aren't swimming in disk space. So we fixed that. We converted the MMU from HDF5 into HATS, and uploaded all of it onto Hugging Face. Now you (🫵!) can crossmatch the Universe on your rusty old Thinkpad.",
+        "img":"img/Midwit_2.png",
+        "gitLink":"",
+        "blogLink":"",
+        "pLink":"https://huggingface.co/blog/hugging-science/multimodal-universe-hats"
+    },
+    {
         "title":"AstroPT",
         "desc":"A foundation model for astronomy. Neural scaling laws predict how well it handles downstream tasks -- and the bigger it gets, the better it gets. Open-source, obviously.",
         "img":"img/carmeme-2.png",
