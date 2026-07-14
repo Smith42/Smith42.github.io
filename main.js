@@ -309,9 +309,9 @@ function project(proj){
             blogLink.appendChild(blog);
         }
         pCont.appendChild(p);
-        pCont.appendChild(arxivLink);
-        pCont.appendChild(gitLink);
-        pCont.appendChild(blogLink);
+        if(item.pLink != "") pCont.appendChild(arxivLink);
+        if(item.gitLink != "") pCont.appendChild(gitLink);
+        if(item.blogLink != "") pCont.appendChild(blogLink);
         info.appendChild(pCont);
         if(item.img){
             info.appendChild(img);

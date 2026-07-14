@@ -28,8 +28,8 @@
         "desc":"The MMU's killer feature (crossmatching) needed you to download a hefty amount of data. This is obviously not great if you aren't swimming in disk space. So we fixed that. We converted the MMU from HDF5 into HATS, and uploaded all of it onto Hugging Face. Now you (🫵!) can crossmatch the Universe on your rusty old Thinkpad.",
         "img":"img/Midwit_2.png",
         "gitLink":"",
-        "blogLink":"",
-        "pLink":"https://huggingface.co/blog/hugging-science/multimodal-universe-hats"
+        "blogLink":"https://huggingface.co/blog/hugging-science/multimodal-universe-hats",
+        "pLink":""
     },
     {
         "title":"AstroPT",

@@ -208,17 +208,9 @@ a{
 }
 .gitLink,.arxivLink,.blogLink{
     width:3rem;
+    margin:0 0.75rem;
     position: relative;
     bottom:-1rem;
-}
-.gitLinkMul{
-    left:rem;
-}
-.arxivLink{
-    right:5rem;
-}
-.blogLink{
-    left:5rem;
 }
 .gitImg,.arxivImg,.blogImg{
     height:2.5rem;
